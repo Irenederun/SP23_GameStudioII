@@ -45,21 +45,21 @@ public class ClicktoChange : MonoBehaviour
 
     void ClickChange()
     {
-        if (clickTimes == 0)
+        if (clickTimes == 0 && ToolFollow.knifeFollow)
         {
             clickTimes++;
             spriteRenderer.sprite = sprites[0];
             return;
         }
 
-        if (clickTimes == 1)
+        if (clickTimes == 1 && ToolFollow.knifeFollow)
         {
             clickTimes++;
             spriteRenderer.sprite = sprites[1];
             return;
         }
         
-        if (clickTimes == 2)
+        if (clickTimes == 2 && ToolFollow.knifeFollow)
         {
             clickTimes++;
             spriteRenderer.sprite = sprites[2];
