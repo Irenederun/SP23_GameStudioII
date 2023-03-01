@@ -1,18 +1,18 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using System.Resources;
 using UnityEngine;
 
-public class ToolFollow : MonoBehaviour
+public class ChipFollow : MonoBehaviour
 {
     private bool dragging = false;
     private Vector2 objectPos1;
     private Vector3 objectPosxyz;
     private int clickTimes = 0;
 
-    public static bool onPlate;
-    public static bool knifeFollow;
+    private bool chipOnPlate;
+    private bool firstPickUp = false;
+    public static bool chipFollow;
 
     private BoxCollider2D boxCol;
     private CircleCollider2D cirCol;
@@ -21,39 +21,39 @@ public class ToolFollow : MonoBehaviour
     void Start()
     {
         boxCol = gameObject.GetComponent<BoxCollider2D>();
+        cirCol = gameObject.GetComponent<CircleCollider2D>();
+        TurnOnCollider();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (onPlate)
+        if (chipOnPlate)
         {
             if (clickTimes % 2 == 1)
             {
-                objectPos1 = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                UpdateMousePosition();
                 objectPosxyz = objectPos1;
                 transform.position = objectPosxyz;
-                transform.rotation = Quaternion.Euler(0,0,45);
-
-                knifeFollow = true;
+                
+                chipFollow = true;
+                
             }
             else
             {
-                knifeFollow = false;
-                transform.rotation = Quaternion.identity;
+                chipFollow = false;
             }
         }
 
-        if (!onPlate)
+        if (!chipOnPlate)
         {
             if (clickTimes != 0)
             {
-                objectPos1 = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                UpdateMousePosition();
                 objectPosxyz = objectPos1;
                 transform.position = objectPosxyz;
-                transform.rotation = Quaternion.Euler(0,0,45);
-                
-                knifeFollow = true;
+
+                chipFollow = true;
             }
         }
     }
@@ -61,24 +61,34 @@ public class ToolFollow : MonoBehaviour
     private void OnMouseDown()
     {
         clickTimes++;
-        Table.instance.KnifeCanFollow++;
     }
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        if (col.gameObject.name.Contains("Plate"))
+        if (col.gameObject.layer == 13)
         {
-            onPlate = true;
+            chipOnPlate = true;
             boxCol.enabled = true;
         }
     }
     
     private void OnTriggerExit2D(Collider2D col)
     {
-        if (col.gameObject.name.Contains("Plate"))
+        if (col.gameObject.layer == 13)
         {
-            onPlate = false;
+            chipOnPlate = false;
             boxCol.enabled = false;
         }
+    }
+    
+    private void UpdateMousePosition()
+    {
+        objectPos1 = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    }
+
+    private void TurnOnCollider()
+    {
+        boxCol.enabled = true;
+        cirCol.enabled = true;
     }
 }

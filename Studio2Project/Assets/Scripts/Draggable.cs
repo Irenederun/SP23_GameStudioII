@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Draggable : MonoBehaviour
@@ -6,6 +8,15 @@ public class Draggable : MonoBehaviour
     private Vector2 objectPos1;
     private Vector3 objectPosxyz;
     public GameObject awayMouse;
+    
+    public List<Sprite> dragMouseSprite;
+    private SpriteRenderer mouseRenderer;
+    
+    private void Start()
+    {
+        mouseRenderer = gameObject.GetComponent<SpriteRenderer>();
+        mouseRenderer.sprite = dragMouseSprite[GameManager.NumberCount];
+    }
 
     void Update()
     {
@@ -28,6 +39,7 @@ public class Draggable : MonoBehaviour
             
             AwayBelt.sendAway = false;
             GameManager.buttonPressable = true;
+            GameManager.NumberCount++;
         }
     }
     

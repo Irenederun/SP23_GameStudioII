@@ -147,3 +147,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  mouseSprites:
+  - {fileID: 21300000, guid: af8c84f9aeedcbc4986f76b2bfaa5e1d, type: 3}
+  - {fileID: 21300000, guid: 2b7adf22f574b3e4ebbb120c0d9c0233, type: 3}
+  - {fileID: 21300000, guid: af8c84f9aeedcbc4986f76b2bfaa5e1d, type: 3}
+  - {fileID: 21300000, guid: af8c84f9aeedcbc4986f76b2bfaa5e1d, type: 3}
+  - {fileID: 21300000, guid: af8c84f9aeedcbc4986f76b2bfaa5e1d, type: 3}
+  - {fileID: 21300000, guid: af8c84f9aeedcbc4986f76b2bfaa5e1d, type: 3}

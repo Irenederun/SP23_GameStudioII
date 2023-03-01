@@ -150,4 +150,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c9355d487249c1e408654930a17564c0, type: 3}
   - {fileID: 21300000, guid: 40b842ecf1c3d1d47bf2d8ecc98cc4d2, type: 3}
   - {fileID: 21300000, guid: 35b3e32f79dd45f49b7761389dcaf59f, type: 3}
+  - {fileID: 21300000, guid: c4264308ac8973048b172b1a641ee04c, type: 3}
+  - {fileID: 21300000, guid: d9f8bbc5cdd38c3428671ea0fa6135a9, type: 3}
+  - {fileID: 21300000, guid: 1b1231ad2ce6b6147a40e70d4848713a, type: 3}
   draggedAway: {fileID: 1422506149297610450, guid: 81fb23f2178c5fc4f9d3bb1c9e8a6a97, type: 3}

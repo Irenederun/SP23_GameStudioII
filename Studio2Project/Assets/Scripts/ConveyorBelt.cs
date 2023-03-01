@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using Collision2D = UnityEngine.Collision2D;
 using Debug = UnityEngine.Debug;
@@ -16,10 +17,16 @@ public class ConveyorBelt : MonoBehaviour
     private Vector3 objectPos;
     private Vector2 objectPos1;
     private Vector3 objectPosxyz;
-       
+
+    public List<Sprite> mouseSprites;
+    private SpriteRenderer mouseRenderer;
+
     void Start()
     {
         objectPos = gameObject.transform.position;
+        
+        mouseRenderer = gameObject.GetComponent<SpriteRenderer>();
+        mouseRenderer.sprite = mouseSprites[GameManager.NumberCount];
     }
     
     void Update()
@@ -60,6 +67,7 @@ public class ConveyorBelt : MonoBehaviour
         if (col.gameObject.layer == 10)
         {
             Debug.Log("Destroyed In!");
+            GameManager.buttonPressable = true;
             Destroy(this.gameObject);
         }
     }

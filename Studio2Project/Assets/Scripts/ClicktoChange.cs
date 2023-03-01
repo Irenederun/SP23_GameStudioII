@@ -48,21 +48,57 @@ public class ClicktoChange : MonoBehaviour
         if (clickTimes == 0 && ToolFollow.knifeFollow)
         {
             clickTimes++;
-            spriteRenderer.sprite = sprites[0];
+
+            switch (GameManager.numberCount)
+            {
+                case 0:
+                    spriteRenderer.sprite = sprites[0];
+                    break;
+                case 1:
+                    spriteRenderer.sprite = sprites[3];
+                    break;
+                default:
+                    spriteRenderer.sprite = sprites[0];
+                    break;
+            }
             return;
         }
 
-        if (clickTimes == 1 && ToolFollow.knifeFollow)
+        if (clickTimes == 1 && SpawnChip.chipIsFollow)
         {
             clickTimes++;
-            spriteRenderer.sprite = sprites[1];
+            switch (GameManager.numberCount)
+            {
+                case 0:
+                    spriteRenderer.sprite = sprites[1];
+                    break;
+                case 1:
+                    spriteRenderer.sprite = sprites[4];
+                    break;
+                default:
+                    spriteRenderer.sprite = sprites[1];
+                    break;
+            }
+            Destroy(SpawnChip.thisChip);
+            SpawnChip.clickTimes = 0;
             return;
         }
         
-        if (clickTimes == 2 && ToolFollow.knifeFollow)
+        if (clickTimes == 2 && SewingFollow.sewingFollow)
         {
             clickTimes++;
-            spriteRenderer.sprite = sprites[2];
+            switch (GameManager.numberCount)
+            {
+                case 0:
+                    spriteRenderer.sprite = sprites[2];
+                    break;
+                case 1:
+                    spriteRenderer.sprite = sprites[5];
+                    break;
+                default:
+                    spriteRenderer.sprite = sprites[2];
+                    break;
+            }
         }
     }
 }

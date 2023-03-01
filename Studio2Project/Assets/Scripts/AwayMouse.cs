@@ -1,8 +1,18 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class AwayMouse : MonoBehaviour
 {
     Vector3 awayPos;
+    public List<Sprite> awayMouseSprite;
+    private SpriteRenderer mouseRenderer;
+
+    private void Start()
+    {
+         mouseRenderer = gameObject.GetComponent<SpriteRenderer>();
+         mouseRenderer.sprite = awayMouseSprite[GameManager.NumberCount];
+    }
 
     void Update()
     {
