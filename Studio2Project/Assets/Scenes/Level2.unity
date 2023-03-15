@@ -2783,6 +2783,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1329826132}
     m_Modifications:
+    - target: {fileID: 1898589695, guid: f5dfcba4c0323d240b2963559899c68b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1898589697, guid: f5dfcba4c0323d240b2963559899c68b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4256096199163840583, guid: f5dfcba4c0323d240b2963559899c68b, type: 3}
       propertyPath: claw
       value: 
@@ -2835,9 +2843,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 18.78
       objectReference: {fileID: 0}
+    - target: {fileID: 4256096199163840585, guid: f5dfcba4c0323d240b2963559899c68b, type: 3}
+      propertyPath: m_Color.b
+      value: 0.14150941
+      objectReference: {fileID: 0}
+    - target: {fileID: 4256096199163840585, guid: f5dfcba4c0323d240b2963559899c68b, type: 3}
+      propertyPath: m_Color.g
+      value: 0.14150941
+      objectReference: {fileID: 0}
+    - target: {fileID: 4256096199163840585, guid: f5dfcba4c0323d240b2963559899c68b, type: 3}
+      propertyPath: m_Color.r
+      value: 0.14150941
+      objectReference: {fileID: 0}
+    - target: {fileID: 4256096199163840585, guid: f5dfcba4c0323d240b2963559899c68b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4256096199163840586, guid: f5dfcba4c0323d240b2963559899c68b, type: 3}
       propertyPath: m_Name
       value: Frame
+      objectReference: {fileID: 0}
+    - target: {fileID: 4256096199163840586, guid: f5dfcba4c0323d240b2963559899c68b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4256096199694397890, guid: f5dfcba4c0323d240b2963559899c68b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4256096199694397919, guid: f5dfcba4c0323d240b2963559899c68b, type: 3}
       propertyPath: rightCamera
