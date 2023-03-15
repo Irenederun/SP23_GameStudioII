@@ -23,16 +23,16 @@ TagManager:
   - Mouse
   - ForChip
   - Chips
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - ClawIgnore
+  - Claw
+  - xray
+  - xrayignore
+  - ClothTarget
+  - MouseTarget
+  - Mouse
+  - Cloth
+  - OtherComponent
+  - IpadTarget
   - 
   - 
   - 

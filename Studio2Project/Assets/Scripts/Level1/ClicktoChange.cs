@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+ using System.Collections.Generic;
 using UnityEngine;
 
 public class ClicktoChange : MonoBehaviour
@@ -79,6 +79,7 @@ public class ClicktoChange : MonoBehaviour
                     spriteRenderer.sprite = sprites[1];
                     break;
             }
+            SpawnChip.chipIsFollow = false;
             Destroy(SpawnChip.thisChip);
             SpawnChip.clickTimes = 0;
             return;
