@@ -1,4 +1,5 @@
 using System;
+using UnityEditor;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -57,7 +58,16 @@ public class GameManager : MonoBehaviour
         if (NumberCount > 5)
         {
             NumberCount = 0;
-        } 
+        }
+
+        if (ToolFollow.knifeFollow || SewingFollow.sewingFollow || SpawnChip.chipIsFollow)
+        {
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.visible = true;
+        }
     }
 
     public void Spawn()

@@ -36,11 +36,15 @@ public class ToolFollow : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0,0,45);
 
                 knifeFollow = true;
+
+                //Cursor.visible = false;
             }
             else
             {
                 knifeFollow = false;
                 transform.rotation = Quaternion.identity;
+                
+                //Cursor.visible = true;
             }
         }
 
@@ -54,6 +58,8 @@ public class ToolFollow : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0,0,45);
                 
                 knifeFollow = true;
+                
+                //Cursor.visible = false;
             }
         }
     }
