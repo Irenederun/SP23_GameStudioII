@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject button;
-    public GameObject parts;
+    public GameObject conveyorbeltMouse;
     public GameObject operationObject;
     public GameObject fakeButton;
 
@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
 
     public void Spawn()
     {
-        Instantiate(parts, new Vector3(-7f, 7.5f, 10), Quaternion.identity);
+        Instantiate(conveyorbeltMouse, new Vector3(-7f, 7.5f, 10), Quaternion.identity);
     }
 
 }
