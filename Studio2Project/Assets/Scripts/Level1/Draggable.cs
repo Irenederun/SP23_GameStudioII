@@ -29,7 +29,7 @@ public class Draggable : MonoBehaviour
 
         if (!dragging && AwayBelt.sendAway)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
             Vector3 beltPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             float beltPosx = beltPos.x;
             float beltPosy = beltPos.y;

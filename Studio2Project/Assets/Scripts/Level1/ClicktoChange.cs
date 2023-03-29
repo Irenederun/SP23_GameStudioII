@@ -11,6 +11,12 @@ public class ClicktoChange : MonoBehaviour
     
     public GameObject draggedAway;
 
+    private Vector2 objectPos1;
+    private Vector3 objectPosxyz;
+    public GameObject heart;
+    private GameObject thisHeart;
+    
+
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -64,9 +70,14 @@ public class ClicktoChange : MonoBehaviour
             return;
         }
 
-        if (clickTimes == 1 && SpawnChip.chipIsFollow)
+        if (clickTimes == 1)
         {
             clickTimes++;
+            
+            UpdateMousePosition();
+            thisHeart = Instantiate(heart, objectPosxyz, Quaternion.identity);
+            Cursor.visible = false;
+            
             switch (GameManager.numberCount)
             {
                 case 0:
@@ -101,5 +112,11 @@ public class ClicktoChange : MonoBehaviour
                     break;
             }
         }
+    }
+    
+    private void UpdateMousePosition()
+    {
+        objectPos1 = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        objectPosxyz = objectPos1;
     }
 }

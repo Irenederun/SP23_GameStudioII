@@ -154,3 +154,4 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d9f8bbc5cdd38c3428671ea0fa6135a9, type: 3}
   - {fileID: 21300000, guid: 1b1231ad2ce6b6147a40e70d4848713a, type: 3}
   draggedAway: {fileID: 1422506149297610450, guid: 81fb23f2178c5fc4f9d3bb1c9e8a6a97, type: 3}
+  heart: {fileID: 1329806818971441161, guid: 9816a0bc3de834290a16653ed82d747d, type: 3}
