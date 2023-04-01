@@ -21,6 +21,7 @@ public class ToolFollow : MonoBehaviour
     void Start()
     {
         boxCol = gameObject.GetComponent<BoxCollider2D>();
+        boxCol.enabled = true;
     }
 
     // Update is called once per frame

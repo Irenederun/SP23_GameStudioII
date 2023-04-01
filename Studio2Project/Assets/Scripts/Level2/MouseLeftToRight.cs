@@ -8,7 +8,7 @@ public class MouseLeftToRight : MonoBehaviour
 {
     public GameObject ratNoHeart;
     public GameObject ratWithHeart;
-    private Vector3 ratPos = new Vector3 (5.95f, -0.96f, 10f);
+    private Vector3 ratPos = new Vector3 (5.95f, -1.21f, 10f);
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.name.Contains("Mouse"))
