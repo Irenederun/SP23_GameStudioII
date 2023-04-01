@@ -10,9 +10,12 @@ public class ClicktoRotateMouse : MonoBehaviour
     private bool follow = false;
     private Vector2 objectPos;
     private Vector3 objectPosxyz;
+    private FixedJoint2D joint2d;
     
     public static bool mouseIsInPosition;
     private int inTargetClick = 0;
+    
+    public GameObject connectedBody;
 
     // Update is called once per frame
     void Update()
@@ -54,10 +57,13 @@ public class ClicktoRotateMouse : MonoBehaviour
                     case 1:
                         follow = false;
                         mouseIsInPosition = true;
+                        joint2d = gameObject.AddComponent<FixedJoint2D>();
+                        joint2d.connectedBody = connectedBody.GetComponent<Rigidbody2D>();
                         break;
                     case 0:
                         follow = true;
                         mouseIsInPosition = false;
+                        Destroy(joint2d);
                         break;
                 }
             }

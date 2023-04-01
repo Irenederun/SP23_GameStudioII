@@ -19,7 +19,6 @@ public class XRayFollow : MonoBehaviour
     public float lowerLimit;
     public GameObject rightCamera;
     public GameObject XRay;
-    public GameObject claw;
     private Camera cam;
     private Vector3 initialPos;
     private Quaternion initialRot;
@@ -27,6 +26,9 @@ public class XRayFollow : MonoBehaviour
     public static bool allowPass = false;
     public static bool clawAway = false;
     private SpriteRenderer sp;
+
+    public GameObject allowToPass;
+    public GameObject NotPass;
     
     private void Start()
     {
@@ -86,6 +88,7 @@ public class XRayFollow : MonoBehaviour
             {
                 allowPass = true;
                 sp.color = Color.green;
+                allowToPass.SetActive(true);
                 Invoke("AllowPass", 1f);
             }
             
@@ -93,6 +96,7 @@ public class XRayFollow : MonoBehaviour
             {
                 allowPass = false;
                 sp.color = Color.red;
+                NotPass.SetActive(true);
                 Invoke("NoPass", 1f);
             }
         }
@@ -114,10 +118,12 @@ public class XRayFollow : MonoBehaviour
     private void AllowPass()
     {
         RatOnBeltRight.speed = 1.5f;
+        allowToPass.SetActive(false);
     }
 
     private void NoPass()
     {
         clawAway = true;
+        NotPass.SetActive(false);
     }
 }

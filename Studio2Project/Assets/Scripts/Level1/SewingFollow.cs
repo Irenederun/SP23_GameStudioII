@@ -32,7 +32,7 @@ public class SewingFollow : MonoBehaviour
     {
         if (sewingOnPlate)
         {
-            if (clickTimes % 2 == 1)
+            if (clickTimes % 2 == 1 && !ToolFollow.knifeFollow)
             {
                 UpdateMousePosition();
                 objectPosxyz = objectPos1;

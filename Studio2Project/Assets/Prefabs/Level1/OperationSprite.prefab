@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6366613310186520756}
   - component: {fileID: 6366613310186520757}
-  - component: {fileID: 6366613310186520746}
   - component: {fileID: 6366613310186520747}
   - component: {fileID: 9186027812994529692}
+  - component: {fileID: 732500059868383997}
   m_Layer: 9
   m_Name: OperationSprite
   m_TagString: Untagged
@@ -87,32 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6366613310186520746
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6366613310186520758}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.24686778, y: 0.011214137}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.33, y: 3.36}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.417855, y: 2.654092}
-  m_EdgeRadius: 0
 --- !u!50 &6366613310186520747
 Rigidbody2D:
   serializedVersion: 4
@@ -150,8 +124,25 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a0c1581ffd7be6d4786dab37e59fe621, type: 3}
   - {fileID: 21300000, guid: 0073de5852de7436288cef9195de5ea7, type: 3}
   - {fileID: 21300000, guid: b4960a4a306f6473cb2fc05e47e76198, type: 3}
-  - {fileID: 21300000, guid: c4264308ac8973048b172b1a641ee04c, type: 3}
-  - {fileID: 21300000, guid: d9f8bbc5cdd38c3428671ea0fa6135a9, type: 3}
-  - {fileID: 21300000, guid: 1b1231ad2ce6b6147a40e70d4848713a, type: 3}
+  - {fileID: 21300000, guid: 06e798f5101539644a36c4787ad69b06, type: 3}
+  - {fileID: 21300000, guid: dabec1ad53fe51a438cfadaf818cc307, type: 3}
+  - {fileID: 21300000, guid: 954e30af66aa3304a85f71af4e31709f, type: 3}
+  - {fileID: 21300000, guid: 313fd581fd3ca5046ab65a90f2976e2b, type: 3}
   draggedAway: {fileID: 1422506149297610450, guid: 81fb23f2178c5fc4f9d3bb1c9e8a6a97, type: 3}
   heart: {fileID: 1329806818971441161, guid: 9816a0bc3de834290a16653ed82d747d, type: 3}
+--- !u!58 &732500059868383997
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6366613310186520758}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.5912744, y: 0.108261526}
+  serializedVersion: 2
+  m_Radius: 0.7326175

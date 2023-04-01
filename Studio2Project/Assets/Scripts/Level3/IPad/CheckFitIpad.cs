@@ -28,7 +28,7 @@ public class CheckFitIpad : MonoBehaviour
         {
             SetUpEdgePoints();
         }
-        Debug.Log("Ipad " + CheckIfFullyInTarget());
+        //Debug.Log("Ipad " + CheckIfFullyInTarget());
     }
 
     private void SetUpEdgePoints()

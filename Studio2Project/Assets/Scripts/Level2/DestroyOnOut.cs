@@ -18,6 +18,8 @@ public class DestroyOnOut : MonoBehaviour
             RatOnBeltRight.clawCollided = false;
             XRayFollow.clawAway = false;
             clawReturn = true;
+            
+            LoadNextScene.mouseNumber++;
         }
     }
 }

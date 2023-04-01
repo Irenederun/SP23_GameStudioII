@@ -15,6 +15,9 @@ public class ClicktoRotate : MonoBehaviour
 
     public static bool clothIsInPosition;
     private int inTargetClick = 0;
+    
+    private FixedJoint2D joint2d;
+    public GameObject connectedBody;
 
     // Update is called once per frame
     void Update()
@@ -56,10 +59,13 @@ public class ClicktoRotate : MonoBehaviour
                     case 1:
                         follow = false;
                         clothIsInPosition = true;
+                        joint2d = gameObject.AddComponent<FixedJoint2D>();
+                        joint2d.connectedBody = connectedBody.GetComponent<Rigidbody2D>();
                         break;
                     case 0:
                         follow = true;
                         clothIsInPosition = false;
+                        Destroy(joint2d);
                         break;
                 }
             }

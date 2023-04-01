@@ -15,7 +15,7 @@ public class Draggable : MonoBehaviour
     private void Start()
     {
         mouseRenderer = gameObject.GetComponent<SpriteRenderer>();
-        mouseRenderer.sprite = dragMouseSprite[GameManager.NumberCount];
+        mouseRenderer.sprite = dragMouseSprite[GameManager.instance.NumberCount];
     }
 
     void Update()
@@ -39,7 +39,7 @@ public class Draggable : MonoBehaviour
             
             AwayBelt.sendAway = false;
             GameManager.buttonPressable = true;
-            GameManager.NumberCount++;
+            GameManager.instance.NumberCount++;
         }
     }
     

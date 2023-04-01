@@ -26,7 +26,7 @@ public class ConveyorBelt : MonoBehaviour
         objectPos = gameObject.transform.position;
         
         mouseRenderer = gameObject.GetComponent<SpriteRenderer>();
-        mouseRenderer.sprite = mouseSprites[GameManager.NumberCount];
+        mouseRenderer.sprite = mouseSprites[GameManager.instance.NumberCount];
     }
     
     void Update()

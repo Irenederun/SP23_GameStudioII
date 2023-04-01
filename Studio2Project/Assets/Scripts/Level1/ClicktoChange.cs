@@ -20,6 +20,10 @@ public class ClicktoChange : MonoBehaviour
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        if (GameManager.instance.NumberCount == 1)
+        {
+            spriteRenderer.sprite = sprites[6];
+        }
     }
 
     private void Update()
@@ -55,7 +59,7 @@ public class ClicktoChange : MonoBehaviour
         {
             clickTimes++;
 
-            switch (GameManager.numberCount)
+            switch (GameManager.instance.NumberCount)
             {
                 case 0:
                     spriteRenderer.sprite = sprites[0];
@@ -70,7 +74,7 @@ public class ClicktoChange : MonoBehaviour
             return;
         }
 
-        if (clickTimes == 1)
+        if (clickTimes == 1 && !ToolFollow.knifeFollow && !SewingFollow.sewingFollow)
         {
             clickTimes++;
             
@@ -78,7 +82,7 @@ public class ClicktoChange : MonoBehaviour
             thisHeart = Instantiate(heart, objectPosxyz, Quaternion.identity);
             Cursor.visible = false;
             
-            switch (GameManager.numberCount)
+            switch (GameManager.instance.NumberCount)
             {
                 case 0:
                     spriteRenderer.sprite = sprites[1];
@@ -99,7 +103,7 @@ public class ClicktoChange : MonoBehaviour
         if (clickTimes == 2 && SewingFollow.sewingFollow)
         {
             clickTimes++;
-            switch (GameManager.numberCount)
+            switch (GameManager.instance.NumberCount)
             {
                 case 0:
                     spriteRenderer.sprite = sprites[2];

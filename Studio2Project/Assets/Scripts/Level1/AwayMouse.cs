@@ -11,7 +11,7 @@ public class AwayMouse : MonoBehaviour
     private void Start()
     {
          mouseRenderer = gameObject.GetComponent<SpriteRenderer>();
-         mouseRenderer.sprite = awayMouseSprite[GameManager.NumberCount];
+         mouseRenderer.sprite = awayMouseSprite[GameManager.instance.NumberCount - 1];
     }
 
     void Update()

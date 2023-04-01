@@ -50,8 +50,6 @@ public class RatOnBeltRight : MonoBehaviour
             ratPos.y += 2f * Time.deltaTime;
             transform.position = ratPos;
         }
-        
-        Debug.Log(ratPos.x);
     }
 
     private void OnTriggerEnter2D(Collider2D col)

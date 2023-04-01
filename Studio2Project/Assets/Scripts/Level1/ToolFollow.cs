@@ -28,7 +28,7 @@ public class ToolFollow : MonoBehaviour
     {
         if (onPlate)
         {
-            if (clickTimes % 2 == 1)
+            if (clickTimes % 2 == 1 && !SewingFollow.sewingFollow)
             {
                 objectPos1 = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 objectPosxyz = objectPos1;
