@@ -20,6 +20,7 @@ public class Draggable : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(AwayBelt.sendAway);
         if (dragging)
         {
             objectPos1 = Camera.main.ScreenToWorldPoint(Input.mousePosition);
