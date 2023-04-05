@@ -36,7 +36,7 @@ public class XRayFollow : MonoBehaviour
         initialPos = transform.position;
         initialRot = transform.rotation;
         sp = GetComponent<SpriteRenderer>();
-        sp.color = Color.gray;
+        sp.color = new Color32(36,36,36, 255);
     }
 
     // Update is called once per frame
@@ -72,7 +72,7 @@ public class XRayFollow : MonoBehaviour
                 {
                     XRay.SetActive(false);
                     xRayActive = false;
-                    sp.color = Color.gray;
+                    sp.color = new Color32(36,36,36, 255);
                 }
                 return;
             }

@@ -13,21 +13,8 @@ public class NoteBook : MonoBehaviour
       boxCol = GetComponent<BoxCollider2D>();
    }
 
-   private void Update()
-   {
-      if (NoteBookClose.turnOnCollider)
-      {
-         boxCol.enabled = true;
-      }
-      if (!NoteBookClose.turnOnCollider)
-      {
-         boxCol.enabled = true;
-      }
-   }
-
    private void OnMouseDown()
    {
-      Instantiate(notebook);
-      NoteBookClose.turnOnCollider = false;
+         Instantiate(notebook);
    }
 }

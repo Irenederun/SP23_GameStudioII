@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro.SpriteAssetUtilities;
 using Unity.VisualScripting;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class RatOnBeltRight : MonoBehaviour
@@ -47,7 +48,7 @@ public class RatOnBeltRight : MonoBehaviour
 
         if (clawCollided)
         {
-            ratPos.y += 2f * Time.deltaTime;
+            ratPos.y += ClawAway.speed * Time.deltaTime;
             transform.position = ratPos;
         }
     }

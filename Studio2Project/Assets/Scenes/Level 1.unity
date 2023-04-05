@@ -436,6 +436,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 1e3d38e00c0374b4699117a98ea941ab, type: 3}
+    - target: {fileID: 7537859916347301077, guid: 12a728eba95061840b3e3665319d3bc7, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537859916347301077, guid: 12a728eba95061840b3e3665319d3bc7, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537859916347301077, guid: 12a728eba95061840b3e3665319d3bc7, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7537859916347301081, guid: 12a728eba95061840b3e3665319d3bc7, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -499,6 +511,10 @@ PrefabInstance:
     - target: {fileID: 7537859916347301086, guid: 12a728eba95061840b3e3665319d3bc7, type: 3}
       propertyPath: m_Name
       value: FakeChipInPlate
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537859916347301086, guid: 12a728eba95061840b3e3665319d3bc7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12a728eba95061840b3e3665319d3bc7, type: 3}
@@ -564,7 +580,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c0ae4cb8a1752c04ebbc7c40e8fb4b34, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -931,6 +947,7 @@ MonoBehaviour:
   fakeButton: {fileID: 2091988544}
   mouseCount: {fileID: 173641459}
   fadeOut: {fileID: 2679210994125348877, guid: 49f52d9a1bb83eb43b7dff972908a37b, type: 3}
+  fadeIn: {fileID: 3450634909914546153, guid: e4749cdfea2a5d9458f03db8eee3bf89, type: 3}
 --- !u!4 &845961016
 Transform:
   m_ObjectHideFlags: 0
@@ -1182,7 +1199,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -4
-  m_Sprite: {fileID: 21300000, guid: 76998cd0791d21e4399d067d30b7482b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 875163c3d58031e488fdea21da4b576a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2153,7 +2170,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.009048611, y: 0.12372151}
+  m_Offset: {x: 0.009048611, y: 0.13350946}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2164,7 +2181,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5875308, y: 0.85937554}
+  m_Size: {x: 0.5875308, y: 0.7745464}
   m_EdgeRadius: 0
 --- !u!114 &1756655222
 MonoBehaviour:
@@ -2524,7 +2541,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0020986497, y: -0.0025357604}
+  m_Offset: {x: 0.033017576, y: 0.047275007}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2535,7 +2552,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9538303, y: 0.94421494}
+  m_Size: {x: 1.0156682, y: 0.69516146}
   m_EdgeRadius: 0
 --- !u!50 &2043919975
 Rigidbody2D:
@@ -2783,6 +2800,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8560765337114176552, guid: 8308b184a5cde644fba26f5958f24537, type: 3}
+      propertyPath: m_Size.x
+      value: 0.8601322
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560765337114176552, guid: 8308b184a5cde644fba26f5958f24537, type: 3}
+      propertyPath: m_Size.y
+      value: 0.924646
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560765337114176552, guid: 8308b184a5cde644fba26f5958f24537, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.09324515
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560765337114176552, guid: 8308b184a5cde644fba26f5958f24537, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.03767699
+      objectReference: {fileID: 0}
     - target: {fileID: 8560765337114176553, guid: 8308b184a5cde644fba26f5958f24537, type: 3}
       propertyPath: m_Name
       value: NoteBook
@@ -2830,6 +2863,18 @@ PrefabInstance:
     - target: {fileID: 8560765337114176566, guid: 8308b184a5cde644fba26f5958f24537, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560765337114176567, guid: 8308b184a5cde644fba26f5958f24537, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560765337114176567, guid: 8308b184a5cde644fba26f5958f24537, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560765337114176567, guid: 8308b184a5cde644fba26f5958f24537, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8308b184a5cde644fba26f5958f24537, type: 3}

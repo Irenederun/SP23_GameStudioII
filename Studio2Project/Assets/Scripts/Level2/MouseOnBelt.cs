@@ -13,6 +13,7 @@ public class MouseOnBelt : MonoBehaviour
     public static MouseOnBelt instance;
     private bool onBelt = false;
     private Vector2 mousePos;
+    public static bool clickEnabled = true;
 
     private void Awake()
     {
@@ -49,10 +50,14 @@ public class MouseOnBelt : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (instance == null)
+        if (clickEnabled)
         {
-            instance = this;
-            instance.gameObject.GetComponent<DraggableMouse>().enabled = true;
+            if (instance == null)
+            {
+                clickEnabled = false;
+                instance = this;
+                instance.gameObject.GetComponent<DraggableMouse>().enabled = true;
+            }
         }
     }
 }

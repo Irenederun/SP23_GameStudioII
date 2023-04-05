@@ -17,6 +17,7 @@ public class DestroyOnOut : MonoBehaviour
             XRayFollow.allowPass = false;
             RatOnBeltRight.clawCollided = false;
             XRayFollow.clawAway = false;
+            MouseOnBelt.clickEnabled = true;
             clawReturn = true;
             
             LoadNextScene.mouseNumber++;

@@ -27,15 +27,22 @@ public class ClawAway : MonoBehaviour
 
         if (RatOnBeltRight.clawCollided)
         {
-            Debug.Log("up");
-            clawPos.y += 2f * Time.deltaTime;
+            clawPos.y += speed * Time.deltaTime;
             transform.position = clawPos;
         }
 
         if (DestroyOnOut.clawReturn)
         {
-            transform.position = clawPosInitial;
-            DestroyOnOut.clawReturn = false;
+            if (clawPos.y > clawPosInitial.y)
+            {
+                clawPos.y -= 1.5f * speed * Time.deltaTime;
+                transform.position = clawPos;
+            }
+            else
+            {
+                transform.position = clawPosInitial;
+                DestroyOnOut.clawReturn = false;
+            }
         }
     }
 }

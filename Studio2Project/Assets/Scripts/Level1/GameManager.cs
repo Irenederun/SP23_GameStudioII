@@ -20,10 +20,23 @@ public class GameManager : MonoBehaviour
 
     public Image mouseCount;
     public GameObject fadeOut;
+    public GameObject fadeIn;
+    private GameObject fadeInObj;
     
     private void Awake()
     {
         instance = this;
+    }
+
+    private void Start()
+    {
+        fadeInObj = Instantiate(fadeIn);
+        Invoke("DestroyFadeIn", 1.5f);
+    }
+
+    private void DestroyFadeIn()
+    {
+        Destroy(fadeInObj);
     }
 
     public int NumberCount
@@ -48,6 +61,16 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            SceneManager.LoadScene(0);
+        }
+        
+        if (Input.GetKey(KeyCode.R))
+        {
+            LoadScene();
+        }
+        
         if (Input.GetMouseButtonUp(0) && !objIsDestroyed)
         {
             if (!Table.instance.onBelt)
@@ -92,7 +115,7 @@ public class GameManager : MonoBehaviour
 
     private void LoadScene()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(3);
     }
 
 }
