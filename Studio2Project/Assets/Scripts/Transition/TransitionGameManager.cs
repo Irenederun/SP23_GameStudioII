@@ -18,6 +18,7 @@ public class TransitionGameManager : MonoBehaviour
     {
         if (instance == null)
         {
+            DontDestroyOnLoad(gameObject);
             instance = this;
         }
         else

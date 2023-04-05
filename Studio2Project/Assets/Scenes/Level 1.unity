@@ -285,7 +285,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 3a8cf1340c97a4c029b1c4c2cb362eee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -947,7 +947,7 @@ MonoBehaviour:
   fakeButton: {fileID: 2091988544}
   mouseCount: {fileID: 173641459}
   fadeOut: {fileID: 2679210994125348877, guid: 49f52d9a1bb83eb43b7dff972908a37b, type: 3}
-  fadeIn: {fileID: 3450634909914546153, guid: e4749cdfea2a5d9458f03db8eee3bf89, type: 3}
+  fadeIn: {fileID: 9110912350968716683, guid: e4749cdfea2a5d9458f03db8eee3bf89, type: 3}
 --- !u!4 &845961016
 Transform:
   m_ObjectHideFlags: 0
@@ -1060,7 +1060,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 5227e5817ae7a42ae85fc102d933e843, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

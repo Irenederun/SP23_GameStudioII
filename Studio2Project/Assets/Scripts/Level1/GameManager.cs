@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         fadeInObj = Instantiate(fadeIn);
-        Invoke("DestroyFadeIn", 1.5f);
+        Invoke("DestroyFadeIn", 2f);
     }
 
     private void DestroyFadeIn()

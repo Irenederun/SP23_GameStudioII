@@ -2413,6 +2413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeOut: {fileID: 2679210994125348877, guid: 49f52d9a1bb83eb43b7dff972908a37b, type: 3}
+  fadeIn: {fileID: 9110912350968716683, guid: e4749cdfea2a5d9458f03db8eee3bf89, type: 3}
 --- !u!4 &1547025142
 Transform:
   m_ObjectHideFlags: 0
