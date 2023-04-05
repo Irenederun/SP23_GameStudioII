@@ -43,18 +43,15 @@ public class WASD : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("enter");
         if (col.gameObject.name.Contains("2"))
         {
-            TransitionGameManager.instance.levelChanger++;
             Instantiate(TransitionGameManager.instance.fadeOut);
             Invoke("LoadScene1", 2f);
         }
 
         if (col.gameObject.name.Contains("3"))
         {
-            TransitionGameManager.instance.levelChanger++;
-            Instantiate(TransitionGameManager.instance.fadeOut);
+            Instantiate(Transition2Holder.instance.fadeOut);
             Invoke("LoadScene2", 2f);
         }
     }
