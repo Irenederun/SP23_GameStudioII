@@ -58,9 +58,15 @@ public class XRayFollow : MonoBehaviour
                 tapTime++;
             }
 
+            if (Input.GetKeyDown(KeyCode.Mouse0) && RatOnBeltRight.scanSoundEnabled)
+            {
+                scan.Play(0);
+            }
+
             if (Input.GetKeyUp(KeyCode.Mouse0))
             {
                 tapTime = 0;
+                scan.Stop();
             }
 
             if (!FrameReturn.frameUnderBelt && mousePos.y < -1.8f && Input.GetKeyDown(KeyCode.Mouse0))
@@ -91,6 +97,7 @@ public class XRayFollow : MonoBehaviour
                 allowPass = true;
                 sp.color = Color.green;
                 allowToPass.SetActive(true);
+                RatOnBeltRight.scanSoundEnabled = false;
                 Invoke("AllowPass", 1f);
             }
             
@@ -99,6 +106,7 @@ public class XRayFollow : MonoBehaviour
                 allowPass = false;
                 sp.color = Color.red;
                 NotPass.SetActive(true);
+                RatOnBeltRight.scanSoundEnabled = false;
                 Invoke("NoPass", 1f);
             }
         }
@@ -115,7 +123,6 @@ public class XRayFollow : MonoBehaviour
     private void OnMouseDown()
     {
         taping = true;
-        scan.Play(0);
     }
 
     private void AllowPass()

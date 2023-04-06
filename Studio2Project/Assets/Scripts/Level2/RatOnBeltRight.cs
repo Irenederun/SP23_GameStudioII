@@ -12,6 +12,7 @@ public class RatOnBeltRight : MonoBehaviour
     private Vector2 ratPos;
     public static float speed = 2f;
     public static bool arrived = false;
+    public static bool scanSoundEnabled = false;
     public static bool normalMouse;
     public static bool clawCollided = false;
     
@@ -35,6 +36,7 @@ public class RatOnBeltRight : MonoBehaviour
         if (ratPos.x < 11f)
         {
             speed = 2f;
+            scanSoundEnabled = true;
         }
         ratPos.x += speed * Time.deltaTime;
         transform.position = ratPos;
