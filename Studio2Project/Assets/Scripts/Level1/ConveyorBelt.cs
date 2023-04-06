@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Collision2D = UnityEngine.Collision2D;
 using Debug = UnityEngine.Debug;
@@ -10,7 +12,8 @@ public class ConveyorBelt : MonoBehaviour
     private bool dragging = false;
     private bool onTable = false;
     private bool clicking = false;
-   
+    private bool sendAway = false;
+
     public float speed = 2;
     private int clickTimes = 0;
 
@@ -20,6 +23,8 @@ public class ConveyorBelt : MonoBehaviour
 
     public List<Sprite> mouseSprites;
     private SpriteRenderer mouseRenderer;
+    public GameObject awayMouse;
+    public static bool noSewingLines = false;
 
     void Start()
     {
@@ -35,6 +40,21 @@ public class ConveyorBelt : MonoBehaviour
         {
             objectPos.y -= speed * Time.deltaTime;
             transform.position = objectPos;
+            
+            if (sendAway)
+            {
+                Destroy(gameObject);
+                Vector3 beltPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                float beltPosx = beltPos.x;
+                float beltPosy = beltPos.y;
+                Vector3 platePosxyz = new Vector3(beltPosx, beltPosy, 10);
+                Instantiate(awayMouse, platePosxyz, Quaternion.identity);
+                sendAway = false;
+                GameManager.buttonPressable = true;
+                GameManager.instance.NumberCount++;
+
+                noSewingLines = true;
+            }
         }
              
         if (dragging)
@@ -69,6 +89,22 @@ public class ConveyorBelt : MonoBehaviour
             Debug.Log("Destroyed In!");
             GameManager.buttonPressable = true;
             Destroy(this.gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.gameObject.name.Contains("AwayBelt"))
+        {
+            sendAway = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.gameObject.name.Contains("AwayBelt"))
+        {
+            sendAway = false;
         }
     }
 }

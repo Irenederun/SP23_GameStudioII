@@ -7,7 +7,7 @@ public class ClawAway : MonoBehaviour
 {
     private Vector3 clawPos;
     private Vector3 clawPosInitial;
-    public static float speed = 2f;
+    public static float speed = 3f;
     
     // Start is called before the first frame update
     void Start()
@@ -33,12 +33,14 @@ public class ClawAway : MonoBehaviour
 
         if (DestroyOnOut.clawReturn)
         {
+            RatOnBeltRight.clawCollided = false;
             if (clawPos.y > clawPosInitial.y)
             {
-                clawPos.y -= 1.5f * speed * Time.deltaTime;
+                clawPos.y -= 2f * speed * Time.deltaTime;
                 transform.position = clawPos;
             }
-            else
+            
+            if (clawPos.y < clawPosInitial.y)
             {
                 transform.position = clawPosInitial;
                 DestroyOnOut.clawReturn = false;

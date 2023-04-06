@@ -30,9 +30,9 @@ public class SewingFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (sewingOnPlate)
+        if (sewingOnPlate && !ToolFollow.knifeFollow)
         {
-            if (clickTimes % 2 == 1 && !ToolFollow.knifeFollow)
+            if (clickTimes % 2 == 1)
             {
                 UpdateMousePosition();
                 objectPosxyz = objectPos1;

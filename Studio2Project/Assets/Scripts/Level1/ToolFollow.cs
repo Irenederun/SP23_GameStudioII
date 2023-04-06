@@ -27,9 +27,9 @@ public class ToolFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (onPlate)
+        if (onPlate && !SewingFollow.sewingFollow)
         {
-            if (clickTimes % 2 == 1 && !SewingFollow.sewingFollow)
+            if (clickTimes % 2 == 1)
             {
                 objectPos1 = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 objectPosxyz = objectPos1;

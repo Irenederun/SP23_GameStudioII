@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Newtonsoft.Json.Serialization;
 using Unity.VisualScripting;
 using UnityEditorInternal;
 using UnityEngine;
@@ -29,6 +30,7 @@ public class XRayFollow : MonoBehaviour
 
     public GameObject allowToPass;
     public GameObject NotPass;
+    public AudioSource scan;
     
     private void Start()
     {
@@ -36,7 +38,7 @@ public class XRayFollow : MonoBehaviour
         initialPos = transform.position;
         initialRot = transform.rotation;
         sp = GetComponent<SpriteRenderer>();
-        sp.color = new Color32(36,36,36, 255);
+        sp.color = new Color32(36,36,36, 114);
     }
 
     // Update is called once per frame
@@ -72,7 +74,7 @@ public class XRayFollow : MonoBehaviour
                 {
                     XRay.SetActive(false);
                     xRayActive = false;
-                    sp.color = new Color32(36,36,36, 255);
+                    sp.color = new Color32(36,36,36, 114);
                 }
                 return;
             }
@@ -113,6 +115,7 @@ public class XRayFollow : MonoBehaviour
     private void OnMouseDown()
     {
         taping = true;
+        scan.Play(0);
     }
 
     private void AllowPass()

@@ -23,9 +23,11 @@ public class Proceed : MonoBehaviour
             ClickToRotateIpad.ipadIsInPosition)
         {
             buttonImage.color = Color.green;
+            finishButton.enabled = true;
         }
         else
         {
+            finishButton.enabled = false;
             buttonImage.color = Color.white;
         }
     }

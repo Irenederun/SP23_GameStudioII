@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2688429909167613580}
   - component: {fileID: 990211009}
   - component: {fileID: 990211010}
+  - component: {fileID: 8029501869939008329}
   m_Layer: 0
   m_Name: WrongRat
   m_TagString: Untagged
@@ -170,3 +171,19 @@ CircleCollider2D:
   m_Offset: {x: 0.3248767, y: 0.030613756}
   serializedVersion: 2
   m_Radius: 0.25325567
+--- !u!58 &8029501869939008329
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2688429909167613588}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.037930693, y: 0.32999295}
+  serializedVersion: 2
+  m_Radius: 0.23035698

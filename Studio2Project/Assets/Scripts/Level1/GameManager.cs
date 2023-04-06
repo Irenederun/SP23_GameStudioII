@@ -111,6 +111,13 @@ public class GameManager : MonoBehaviour
     public void Spawn()
     {
         Instantiate(conveyorbeltMouse, new Vector3(-7.3f, 7f, 10), Quaternion.identity);
+        buttonPressable = false;
+        Invoke("EnsableButton", 0.7f);
+    }
+
+    public void EnsableButton()
+    {
+        buttonPressable = true;
     }
 
     private void LoadScene()

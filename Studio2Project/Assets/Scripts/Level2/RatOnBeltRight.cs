@@ -10,7 +10,7 @@ using UnityEngine;
 public class RatOnBeltRight : MonoBehaviour
 {
     private Vector2 ratPos;
-    public static float speed = 1.5f;
+    public static float speed = 2f;
     public static bool arrived = false;
     public static bool normalMouse;
     public static bool clawCollided = false;
@@ -34,7 +34,7 @@ public class RatOnBeltRight : MonoBehaviour
     {
         if (ratPos.x < 11f)
         {
-            speed = 1.5f;
+            speed = 2f;
         }
         ratPos.x += speed * Time.deltaTime;
         transform.position = ratPos;

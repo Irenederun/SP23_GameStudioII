@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3987516123739810618}
   - component: {fileID: 3987516123739810617}
   - component: {fileID: 3987516123739810613}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: MouseOnBelt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.29632, y: 1.4476521}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 1
 --- !u!50 &3987516123739810617
 Rigidbody2D:
   serializedVersion: 4
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77381b6f55d1ef047803c2e305f8255e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 1.5
   mouseSprites:
   - {fileID: 21300000, guid: d8592a8c18f222d4ea6888a4f82d206e, type: 3}
   - {fileID: 21300000, guid: 699ad2a926742324aa5aaa121148c09a, type: 3}
@@ -158,3 +158,4 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d8592a8c18f222d4ea6888a4f82d206e, type: 3}
   - {fileID: 21300000, guid: d8592a8c18f222d4ea6888a4f82d206e, type: 3}
   - {fileID: 21300000, guid: d8592a8c18f222d4ea6888a4f82d206e, type: 3}
+  awayMouse: {fileID: 7515598896053750596, guid: 56735f3cc12ed1740b9258eb9f7b0a6f, type: 3}
