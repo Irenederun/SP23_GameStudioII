@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,7 +16,7 @@ public class ClickToRotateIpad : MonoBehaviour
     private int inTargetClick = 0;
     
     private FixedJoint2D joint2d;
-    public GameObject connectedBody;
+    private GameObject connectedBody;
 
     // Update is called once per frame
     void Update()
@@ -44,6 +45,7 @@ public class ClickToRotateIpad : MonoBehaviour
                     break;
                 case 0:
                     follow = false;
+                    outOfPlateClickTimes = 0;
                     break;
             }
         }
@@ -55,6 +57,7 @@ public class ClickToRotateIpad : MonoBehaviour
                 switch (inTargetClick % 2)
                 {
                     case 1:
+                        UpdateConnectedBody(); 
                         follow = false;
                         ipadIsInPosition = true;
                         joint2d = gameObject.AddComponent<FixedJoint2D>();
@@ -92,5 +95,10 @@ public class ClickToRotateIpad : MonoBehaviour
                 }
             }
         }
+    }
+
+    void UpdateConnectedBody()
+    {
+        connectedBody = GameObject.FindWithTag("Board");
     }
 }

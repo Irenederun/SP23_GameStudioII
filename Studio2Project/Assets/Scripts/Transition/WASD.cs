@@ -54,6 +54,12 @@ public class WASD : MonoBehaviour
             Instantiate(Transition2Holder.instance.fadeOut);
             Invoke("LoadScene2", 2f);
         }
+        
+        if (col.gameObject.name.Contains("4"))
+        {
+            Instantiate(Transition2Holder.instance.fadeOut);
+            Invoke("LoadScene3", 2f);
+        }
     }
 
     private void LoadScene1()
@@ -64,5 +70,10 @@ public class WASD : MonoBehaviour
     private void LoadScene2()
     {
         SceneManager.LoadScene(2);
+    }
+    
+    private void LoadScene3()
+    {
+        SceneManager.LoadScene(5);
     }
 }

@@ -17,7 +17,7 @@ public class ClicktoRotate : MonoBehaviour
     private int inTargetClick = 0;
     
     private FixedJoint2D joint2d;
-    public GameObject connectedBody;
+    private GameObject connectedBody;
 
     // Update is called once per frame
     void Update()
@@ -46,9 +46,11 @@ public class ClicktoRotate : MonoBehaviour
                     break;
                 case 0:
                     follow = false;
+                    outOfPlateClickTimes = 0;
                     break;
             }
         }
+        
         if (!ComponentPlate.instance.inPlate)
         {
             if (gameObject.GetComponent<CheckFit>().IsFullyInTarget)
@@ -57,6 +59,7 @@ public class ClicktoRotate : MonoBehaviour
                 switch (inTargetClick % 2)
                 {
                     case 1:
+                        UpdateConnectedBody(); 
                         follow = false;
                         clothIsInPosition = true;
                         joint2d = gameObject.AddComponent<FixedJoint2D>();
@@ -75,7 +78,7 @@ public class ClicktoRotate : MonoBehaviour
                 switch (outOfPlateClickTimes)
                 {
                     case 1:
-                        transform.rotation = Quaternion.Euler(0, 0, 90);
+                       transform.rotation = Quaternion.Euler(0, 0, 90);
                         direction = 'l';
                         break;
                     case 2:
@@ -94,5 +97,10 @@ public class ClicktoRotate : MonoBehaviour
                 }
             }
         }
+    }
+    
+    private void UpdateConnectedBody()
+    {
+        connectedBody = GameObject.FindWithTag("Board");
     }
 }

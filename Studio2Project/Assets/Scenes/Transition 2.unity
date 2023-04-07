@@ -492,6 +492,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 546064321276545730, guid: cd456098ba72a354abcf7e4fa7f85977, type: 3}
+      propertyPath: m_Mass
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 546064321276545734, guid: cd456098ba72a354abcf7e4fa7f85977, type: 3}
       propertyPath: m_Name
       value: Mouse (1)

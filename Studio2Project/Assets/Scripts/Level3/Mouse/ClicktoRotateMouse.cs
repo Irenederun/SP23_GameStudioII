@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,7 +16,8 @@ public class ClicktoRotateMouse : MonoBehaviour
     public static bool mouseIsInPosition;
     private int inTargetClick = 0;
     
-    public GameObject connectedBody;
+    private GameObject connectedBody;
+
 
     // Update is called once per frame
     void Update()
@@ -44,6 +46,7 @@ public class ClicktoRotateMouse : MonoBehaviour
                     break;
                 case 0:
                     follow = false;
+                    outOfPlateClickTimes = 0;
                     break;
             }
         }
@@ -55,6 +58,7 @@ public class ClicktoRotateMouse : MonoBehaviour
                 switch (inTargetClick % 2)
                 {
                     case 1:
+                        UpdateConnectedBody(); 
                         follow = false;
                         mouseIsInPosition = true;
                         joint2d = gameObject.AddComponent<FixedJoint2D>();
@@ -92,5 +96,11 @@ public class ClicktoRotateMouse : MonoBehaviour
                 }
             }
         }
+    }
+    
+    
+    void UpdateConnectedBody()
+    {
+        connectedBody = GameObject.FindWithTag("Board");
     }
 }

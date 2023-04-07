@@ -31,6 +31,7 @@ public class XRayFollow : MonoBehaviour
     public GameObject allowToPass;
     public GameObject NotPass;
     public AudioSource scan;
+    public GameObject animation;
     
     private void Start()
     {
@@ -61,16 +62,24 @@ public class XRayFollow : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Mouse0) && RatOnBeltRight.scanSoundEnabled)
             {
                 scan.Play(0);
+                animation.SetActive(true);
             }
 
             if (Input.GetKeyUp(KeyCode.Mouse0))
             {
                 tapTime = 0;
                 scan.Stop();
+                animation.SetActive(false);
             }
 
             if (!FrameReturn.frameUnderBelt && mousePos.y < -1.8f && Input.GetKeyDown(KeyCode.Mouse0))
             {
+                animation.SetActive(false);
+                if (scan.isPlaying)
+                {
+                    scan.Stop();
+                }
+                
                 transform.position = initialPos;
                 transform.rotation = initialRot;
                 taping = false;
@@ -86,7 +95,7 @@ public class XRayFollow : MonoBehaviour
             }
         }
 
-        if (tapTime*Time.deltaTime > 3f && RatOnBeltRight.arrived)
+        if (tapTime * Time.deltaTime > 15f && RatOnBeltRight.arrived)
         {
             XRay.SetActive(true);
             xRayActive = true;

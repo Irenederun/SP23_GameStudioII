@@ -112,7 +112,7 @@ public class GameManager : MonoBehaviour
     {
         Instantiate(conveyorbeltMouse, new Vector3(-7.3f, 7f, 10), Quaternion.identity);
         buttonPressable = false;
-        Invoke("EnsableButton", 0.7f);
+        //Invoke("EnsableButton", 0.7f);
     }
 
     public void EnsableButton()
