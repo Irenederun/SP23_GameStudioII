@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ClickToRotateIpad : MonoBehaviour
 {
-     private int inPlateClickTimes = 0;
+    private int inPlateClickTimes = 0;
     private int outOfPlateClickTimes = 0;
     public static char direction;
     private bool follow = false;

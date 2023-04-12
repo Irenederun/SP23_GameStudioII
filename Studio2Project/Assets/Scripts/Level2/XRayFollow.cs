@@ -24,8 +24,8 @@ public class XRayFollow : MonoBehaviour
     private Vector3 initialPos;
     private Quaternion initialRot;
     private bool xRayActive = false;
-    public static bool allowPass = false;
-    public static bool clawAway = false;
+    public static bool allowPass;
+    public static bool clawAway;
     private SpriteRenderer sp;
 
     public GameObject allowToPass;
@@ -40,6 +40,8 @@ public class XRayFollow : MonoBehaviour
         initialRot = transform.rotation;
         sp = GetComponent<SpriteRenderer>();
         sp.color = new Color32(36,36,36, 114);
+        allowPass = false;
+        clawAway = false;
     }
 
     // Update is called once per frame
@@ -95,7 +97,7 @@ public class XRayFollow : MonoBehaviour
             }
         }
 
-        if (tapTime * Time.deltaTime > 10f && RatOnBeltRight.arrived)
+        if (tapTime * Time.deltaTime > 15f && RatOnBeltRight.arrived)
         {
             XRay.SetActive(true);
             xRayActive = true;

@@ -22,6 +22,9 @@ public class ToolFollow : MonoBehaviour
     {
         boxCol = gameObject.GetComponent<BoxCollider2D>();
         boxCol.enabled = true;
+
+        onPlate = true;
+        knifeFollow = false;
     }
 
     // Update is called once per frame

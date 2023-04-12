@@ -6,7 +6,13 @@ using UnityEngine;
 
 public class DestroyOnOut : MonoBehaviour
 {
-    public static bool clawReturn = false;
+    public static bool clawReturn;
+
+    private void Start()
+    {
+        clawReturn = false;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name.Contains("Destroy"))

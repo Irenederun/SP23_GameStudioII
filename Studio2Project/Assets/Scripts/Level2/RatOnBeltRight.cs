@@ -11,10 +11,10 @@ public class RatOnBeltRight : MonoBehaviour
 {
     private Vector2 ratPos;
     public static float speed = 2f;
-    public static bool arrived = false;
-    public static bool scanSoundEnabled = false;
+    public static bool arrived;
+    public static bool scanSoundEnabled;
     public static bool normalMouse;
-    public static bool clawCollided = false;
+    public static bool clawCollided;
     
     void Awake()
     {
@@ -28,6 +28,13 @@ public class RatOnBeltRight : MonoBehaviour
         {
             normalMouse = false;
         }
+    }
+
+    private void Start()
+    {
+        arrived = false;
+        scanSoundEnabled = false;
+        clawCollided = false;
     }
 
     // Update is called once per frame

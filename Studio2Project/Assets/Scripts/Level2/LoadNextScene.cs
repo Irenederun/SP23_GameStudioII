@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadNextScene : MonoBehaviour
 {
-    public static int mouseNumber = 0;
+    public static int mouseNumber;
     public GameObject fadeOut;
     public GameObject fadeIn;
     private GameObject fadeInObj;
@@ -15,6 +15,7 @@ public class LoadNextScene : MonoBehaviour
     {
         fadeInObj = Instantiate(fadeIn);
         Invoke("DestroyFadeIn", 2f);
+        mouseNumber = 0;
     }
 
     void DestroyFadeIn()

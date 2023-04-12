@@ -3,7 +3,12 @@ using UnityEngine;
 
 public class AwayBelt : MonoBehaviour
 {
-    public static bool sendAway = false;
+    public static bool sendAway;
+
+    private void Start()
+    {
+        sendAway = false;
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {

@@ -9,12 +9,14 @@ public class SpawnChip : MonoBehaviour
     public GameObject chip;
     private Vector2 objectPos1;
     private Vector3 objectPosxyz;
-    public static int clickTimes = 0;
+    public static int clickTimes;
     public static GameObject thisChip;
     public static bool chipIsFollow;
 
-    private void Update()
+    private void Start()
     {
+        clickTimes = 0;
+        chipIsFollow = false;
     }
 
     private void OnMouseDown()

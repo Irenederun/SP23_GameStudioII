@@ -24,7 +24,7 @@ public class ConveyorBelt : MonoBehaviour
     public List<Sprite> mouseSprites;
     private SpriteRenderer mouseRenderer;
     public GameObject awayMouse;
-    public static bool noSewingLines = false;
+    public static bool noSewingLines;
 
     void Start()
     {
@@ -32,6 +32,8 @@ public class ConveyorBelt : MonoBehaviour
         
         mouseRenderer = gameObject.GetComponent<SpriteRenderer>();
         mouseRenderer.sprite = mouseSprites[GameManager.instance.NumberCount];
+
+        noSewingLines = false;
     }
     
     void Update()

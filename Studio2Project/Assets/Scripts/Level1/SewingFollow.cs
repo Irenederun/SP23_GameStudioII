@@ -25,6 +25,9 @@ public class SewingFollow : MonoBehaviour
         cirCol = gameObject.GetComponent<CircleCollider2D>();
 
         TurnOnCollider();
+
+        sewingOnPlate = true;
+        sewingFollow = false;
     }
 
     // Update is called once per frame

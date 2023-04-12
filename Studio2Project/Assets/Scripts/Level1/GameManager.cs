@@ -14,8 +14,8 @@ public class GameManager : MonoBehaviour
     public GameObject operationObject;
     public GameObject fakeButton;
 
-    public static bool objIsDestroyed = false;
-    public static bool buttonPressable = true;
+    public static bool objIsDestroyed;
+    public static bool buttonPressable;
     private int numberCount = 0;
 
     public Image mouseCount;
@@ -32,6 +32,9 @@ public class GameManager : MonoBehaviour
     {
         fadeInObj = Instantiate(fadeIn);
         Invoke("DestroyFadeIn", 2f);
+
+        objIsDestroyed = false;
+        buttonPressable = true;
     }
 
     private void DestroyFadeIn()

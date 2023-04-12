@@ -23,6 +23,7 @@ public class ChipFollow : MonoBehaviour
         boxCol = gameObject.GetComponent<BoxCollider2D>();
         cirCol = gameObject.GetComponent<CircleCollider2D>();
         TurnOnCollider();
+        chipFollow = false;
     }
 
     // Update is called once per frame

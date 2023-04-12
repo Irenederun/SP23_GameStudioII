@@ -13,11 +13,12 @@ public class MouseOnBelt : MonoBehaviour
     public static MouseOnBelt instance;
     private bool onBelt = false;
     private Vector2 mousePos;
-    public static bool clickEnabled = true;
+    public static bool clickEnabled;
 
     private void Awake()
     {
         instance = null;
+        clickEnabled = true;
     }
 
     // Update is called once per frame
