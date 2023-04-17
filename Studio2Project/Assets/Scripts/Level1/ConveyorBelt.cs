@@ -69,9 +69,12 @@ public class ConveyorBelt : MonoBehaviour
     
     private void OnMouseDown()
     {
-        Instance = this;//make every dragged object the instance 
-        GameManager.buttonPressable = false;
-        Instance.dragging = true;
+        if (!ToolFollow.knifeFollow && !SewingFollow.sewingFollow)
+        {
+            Instance = this;//make every dragged object the instance 
+            GameManager.buttonPressable = false;
+            Instance.dragging = true;
+        }
     }
 
     private void OnMouseUp()

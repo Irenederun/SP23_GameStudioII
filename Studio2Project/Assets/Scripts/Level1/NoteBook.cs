@@ -15,6 +15,9 @@ public class NoteBook : MonoBehaviour
 
    private void OnMouseDown()
    {
-         Instantiate(notebook);
+       if (!ToolFollow.knifeFollow && !SewingFollow.sewingFollow)
+       {
+           Instantiate(notebook);
+       }
    }
 }

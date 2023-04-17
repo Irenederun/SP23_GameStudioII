@@ -46,7 +46,10 @@ public class Draggable : MonoBehaviour
     
     private void OnMouseDown()
     {
-        dragging = true;
+        if (!ToolFollow.knifeFollow && !SewingFollow.sewingFollow)
+        {
+            dragging = true;
+        }
     }
 
     private void OnMouseUp()

@@ -8,7 +8,7 @@ public class ClickToRotateIpad : MonoBehaviour
     private int inPlateClickTimes = 0;
     private int outOfPlateClickTimes = 0;
     public static char direction;
-    private bool follow = false;
+    public static bool follow = false;
     private Vector2 objectPos;
     private Vector3 objectPosxyz;
     
@@ -35,63 +35,66 @@ public class ClickToRotateIpad : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (IpadPlate.instance.inPlate)
-            inPlateClickTimes++;
+        if (!ClicktoRotateMouse.follow && !ClicktoRotate.follow)
         {
-            switch (inPlateClickTimes % 2)
+            if (IpadPlate.instance.inPlate)
+                inPlateClickTimes++;
             {
-                case 1:
-                    follow = true;
-                    break;
-                case 0:
-                    follow = false;
-                    outOfPlateClickTimes = 0;
-                    break;
-            }
-        }
-        if (!IpadPlate.instance.inPlate)
-        {
-            if (gameObject.GetComponent<CheckFitIpad>().IsFullyInTarget)
-            {
-                inTargetClick++;
-                switch (inTargetClick % 2)
+                switch (inPlateClickTimes % 2)
                 {
                     case 1:
-                        UpdateConnectedBody(); 
-                        follow = false;
-                        ipadIsInPosition = true;
-                        joint2d = gameObject.AddComponent<FixedJoint2D>();
-                        joint2d.connectedBody = connectedBody.GetComponent<Rigidbody2D>();
+                        follow = true;
                         break;
                     case 0:
-                        follow = true;
-                        ipadIsInPosition = false;
-                        Destroy(joint2d);
+                        follow = false;
+                        outOfPlateClickTimes = 0;
                         break;
                 }
             }
-            else
+            if (!IpadPlate.instance.inPlate)
             {
-                outOfPlateClickTimes++;
-                switch (outOfPlateClickTimes)
+                if (gameObject.GetComponent<CheckFitIpad>().IsFullyInTarget)
                 {
-                    case 1:
-                        transform.rotation = Quaternion.Euler(0, 0, 90);
-                        direction = 'l';
-                        break;
-                    case 2:
-                        transform.rotation = Quaternion.Euler(0, 0, 180);
-                        direction = 'd';
-                        break;
-                    case 3:
-                        transform.rotation = Quaternion.Euler(0, 0, 270);
-                        direction = 'r';
-                        break;
-                    case 4:
-                        transform.rotation = Quaternion.Euler(0, 0, 0);
-                        direction = 'u';
-                        outOfPlateClickTimes = 0;
-                        break;
+                    inTargetClick++;
+                    switch (inTargetClick % 2)
+                    {
+                        case 1:
+                            UpdateConnectedBody();
+                            follow = false;
+                            ipadIsInPosition = true;
+                            joint2d = gameObject.AddComponent<FixedJoint2D>();
+                            joint2d.connectedBody = connectedBody.GetComponent<Rigidbody2D>();
+                            break;
+                        case 0:
+                            follow = true;
+                            ipadIsInPosition = false;
+                            Destroy(joint2d);
+                            break;
+                    }
+                }
+                else
+                {
+                    outOfPlateClickTimes++;
+                    switch (outOfPlateClickTimes)
+                    {
+                        case 1:
+                            transform.rotation = Quaternion.Euler(0, 0, 90);
+                            direction = 'l';
+                            break;
+                        case 2:
+                            transform.rotation = Quaternion.Euler(0, 0, 180);
+                            direction = 'd';
+                            break;
+                        case 3:
+                            transform.rotation = Quaternion.Euler(0, 0, 270);
+                            direction = 'r';
+                            break;
+                        case 4:
+                            transform.rotation = Quaternion.Euler(0, 0, 0);
+                            direction = 'u';
+                            outOfPlateClickTimes = 0;
+                            break;
+                    }
                 }
             }
         }

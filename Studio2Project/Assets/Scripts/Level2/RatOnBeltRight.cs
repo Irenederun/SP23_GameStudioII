@@ -57,9 +57,14 @@ public class RatOnBeltRight : MonoBehaviour
 
         if (clawCollided)
         {
-            ratPos.y += ClawAway.speed * Time.deltaTime;
-            transform.position = ratPos;
+            Invoke("clawAwayMouse", 1f);
         }
+    }
+
+    private void clawAwayMouse()
+    {
+        ratPos.y += ClawAway.speed * Time.deltaTime;
+        transform.position = ratPos;
     }
 
     private void OnTriggerEnter2D(Collider2D col)

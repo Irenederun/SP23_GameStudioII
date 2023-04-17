@@ -54,8 +54,8 @@ public class ToolFollow : MonoBehaviour
 
         if (!onPlate)
         {
-            if (clickTimes != 0)
-            {
+            //if (clickTimes != 0)
+            //{
                 objectPos1 = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 objectPosxyz = objectPos1;
                 transform.position = objectPosxyz;
@@ -64,7 +64,7 @@ public class ToolFollow : MonoBehaviour
                 knifeFollow = true;
                 
                 //Cursor.visible = false;
-            }
+            //}
         }
     }
     

@@ -8,12 +8,14 @@ public class ClawAway : MonoBehaviour
     private Vector3 clawPos;
     private Vector3 clawPosInitial;
     public static float speed = 3f;
+    private Animator anim;
     
     // Start is called before the first frame update
     void Start()
     {
         clawPos = transform.position;
         clawPosInitial = transform.position;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -27,8 +29,8 @@ public class ClawAway : MonoBehaviour
 
         if (RatOnBeltRight.clawCollided)
         {
-            clawPos.y += speed * Time.deltaTime;
-            transform.position = clawPos;
+            anim.SetBool("catchMouse", true);
+            Invoke("clawReturn", 1f);
         }
 
         if (DestroyOnOut.clawReturn)
@@ -46,5 +48,12 @@ public class ClawAway : MonoBehaviour
                 DestroyOnOut.clawReturn = false;
             }
         }
+    }
+
+    private void clawReturn()
+    {
+        clawPos.y += speed * Time.deltaTime;
+        transform.position = clawPos;
+        anim.SetBool("catchMouse", false);
     }
 }

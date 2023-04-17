@@ -1781,6 +1781,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ClothComponent
       objectReference: {fileID: 0}
+    - target: {fileID: 2282988906297637788, guid: ecdabfa8973aab541be354db12b5c2ef, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2282988906297637789, guid: ecdabfa8973aab541be354db12b5c2ef, type: 3}
       propertyPath: m_RootOrder
       value: 4
