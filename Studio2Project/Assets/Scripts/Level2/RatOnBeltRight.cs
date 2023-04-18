@@ -1,10 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using TMPro.SpriteAssetUtilities;
-using Unity.VisualScripting;
-using UnityEditorInternal;
 using UnityEngine;
 
 public class RatOnBeltRight : MonoBehaviour
@@ -15,7 +8,9 @@ public class RatOnBeltRight : MonoBehaviour
     public static bool scanSoundEnabled;
     public static bool normalMouse;
     public static bool clawCollided;
+    private GameObject childObj;
     private Animator anim;
+    private Animator animScanned;
     
     void Awake()
     {
@@ -66,6 +61,20 @@ public class RatOnBeltRight : MonoBehaviour
 
     private void clawAwayMouse()
     {
+        childObj = gameObject.transform.GetChild(0).gameObject;
+        animScanned = childObj.GetComponent<Animator>();
+        if (MouseLeftToRight.diamondRat)
+        {
+            animScanned.SetBool("diamondClawed", true);
+        }
+        if (MouseLeftToRight.cheeseRat)
+        {
+            animScanned.SetBool("cheeseClawed", true);
+        }
+        if (MouseLeftToRight.normalRat)
+        {
+            animScanned.SetBool("defaultClawed", true);
+        }
         ratPos.y += ClawAway.speed * Time.deltaTime;
         transform.position = ratPos;
         anim.SetBool("clawedDeadMouse", false);

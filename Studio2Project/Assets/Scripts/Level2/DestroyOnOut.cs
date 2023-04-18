@@ -18,6 +18,9 @@ public class DestroyOnOut : MonoBehaviour
         if (collision.gameObject.name.Contains("Destroy"))
         {
             Destroy(gameObject);
+            MouseLeftToRight.diamondRat = false;
+            MouseLeftToRight.cheeseRat = false;
+            MouseLeftToRight.normalRat = false;
             RatOnBeltRight.arrived = false;
             MouseOnBelt.instance = null;
             XRayFollow.allowPass = false;
@@ -25,7 +28,7 @@ public class DestroyOnOut : MonoBehaviour
             XRayFollow.clawAway = false;
             MouseOnBelt.clickEnabled = true;
             clawReturn = true;
-            
+
             LoadNextScene.mouseNumber++;
         }
     }
