@@ -97,7 +97,7 @@ public class XRayFollow : MonoBehaviour
             }
         }
 
-        if (tapTime * Time.deltaTime >= 12f && RatOnBeltRight.arrived)
+        if (tapTime * Time.deltaTime >= 9f && RatOnBeltRight.arrived)
         {
             XRay.SetActive(true);
             xRayActive = true;

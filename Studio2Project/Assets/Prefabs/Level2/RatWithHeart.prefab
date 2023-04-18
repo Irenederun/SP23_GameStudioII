@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7600894710581501084}
   - component: {fileID: 7600894710581501087}
   - component: {fileID: 8569688147814537638}
+  - component: {fileID: 5746000883549997040}
   m_Layer: 0
   m_Name: RatWithHeart
   m_TagString: Untagged
@@ -128,6 +129,26 @@ CapsuleCollider2D:
   m_Offset: {x: 0.06803586, y: -0.629192}
   m_Size: {x: 2.0383363, y: 3.8108928}
   m_Direction: 0
+--- !u!95 &5746000883549997040
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7600894710581501080}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7a45d796f8d20104e8b4289c9e7a801c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &7600894710595069414
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,6 +159,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7600894710595069412}
   - component: {fileID: 7600894710595069415}
+  - component: {fileID: 4742254193212071416}
   m_Layer: 0
   m_Name: Back
   m_TagString: Untagged
@@ -201,7 +223,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 96f1587cc360c204ca5147624525d619, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45945636f2bce6849972a92748ecc98b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -212,3 +234,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 1
   m_SpriteSortPoint: 0
+--- !u!95 &4742254193212071416
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7600894710595069414}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 090dd96fabfe97443882f3c5ec8210ca, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0

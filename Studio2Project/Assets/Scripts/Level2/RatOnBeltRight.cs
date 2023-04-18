@@ -15,6 +15,7 @@ public class RatOnBeltRight : MonoBehaviour
     public static bool scanSoundEnabled;
     public static bool normalMouse;
     public static bool clawCollided;
+    private Animator anim;
     
     void Awake()
     {
@@ -57,6 +58,8 @@ public class RatOnBeltRight : MonoBehaviour
 
         if (clawCollided)
         {
+            anim = GetComponent<Animator>();
+            anim.SetBool("clawedDeadMouse", true);
             Invoke("clawAwayMouse", 1f);
         }
     }
@@ -65,6 +68,7 @@ public class RatOnBeltRight : MonoBehaviour
     {
         ratPos.y += ClawAway.speed * Time.deltaTime;
         transform.position = ratPos;
+        anim.SetBool("clawedDeadMouse", false);
     }
 
     private void OnTriggerEnter2D(Collider2D col)
