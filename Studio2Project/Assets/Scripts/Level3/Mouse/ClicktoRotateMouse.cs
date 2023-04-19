@@ -18,6 +18,8 @@ public class ClicktoRotateMouse : MonoBehaviour
     
     private GameObject connectedBody;
 
+    public Vector3 correctPos;
+
 
     // Update is called once per frame
     void Update()
@@ -31,6 +33,11 @@ public class ClicktoRotateMouse : MonoBehaviour
         if (!follow && MousePlate.instance.inPlate)
         {
             transform.rotation = Quaternion.identity;
+        }
+
+        if (!follow && mouseIsInPosition)
+        {
+            transform.position = correctPos;
         }
     }
 
@@ -63,8 +70,9 @@ public class ClicktoRotateMouse : MonoBehaviour
                             UpdateConnectedBody();
                             follow = false;
                             mouseIsInPosition = true;
-                            joint2d = gameObject.AddComponent<FixedJoint2D>();
-                            joint2d.connectedBody = connectedBody.GetComponent<Rigidbody2D>();
+                            //joint2d = gameObject.AddComponent<FixedJoint2D>();
+                            //joint2d.connectedBody = connectedBody.GetComponent<Rigidbody2D>();
+                            //transform.parent = connectedBody.transform;
                             break;
                         case 0:
                             follow = true;

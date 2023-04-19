@@ -19,6 +19,8 @@ public class ClicktoRotate : MonoBehaviour
     private FixedJoint2D joint2d;
     private GameObject connectedBody;
 
+    public Vector3 correctPos;
+
     // Update is called once per frame
     void Update()
     {
@@ -31,6 +33,11 @@ public class ClicktoRotate : MonoBehaviour
         if (!follow && ComponentPlate.instance.inPlate)
         {
             transform.rotation = Quaternion.identity;
+        }
+
+        if (!follow && clothIsInPosition)
+        {
+            transform.position = correctPos;
         }
     }
 
@@ -64,8 +71,9 @@ public class ClicktoRotate : MonoBehaviour
                             UpdateConnectedBody();
                             follow = false;
                             clothIsInPosition = true;
-                            joint2d = gameObject.AddComponent<FixedJoint2D>();
-                            joint2d.connectedBody = connectedBody.GetComponent<Rigidbody2D>();
+                            //joint2d = gameObject.AddComponent<FixedJoint2D>();
+                            //joint2d.connectedBody = connectedBody.GetComponent<Rigidbody2D>();
+                            //transform.parent = connectedBody.transform;
                             break;
                         case 0:
                             follow = true;

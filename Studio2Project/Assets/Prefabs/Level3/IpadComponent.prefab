@@ -165,4 +165,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5a7982afd056d041b9cc3f7214dbe41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectedBody: {fileID: 1225870939191622127, guid: 04f01cd6e10c30f4a8c8394638a34645, type: 3}
+  correctPos: {x: 2.216386, y: -0.544117, z: 0}

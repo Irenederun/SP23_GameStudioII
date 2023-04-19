@@ -26,7 +26,8 @@ public class Proceed : MonoBehaviour
     private int setNumber = 0;
 
     public static bool goDown;
-    //private Vector3 boardPos;
+    private GameObject oldBoard;
+    private Vector3 boardPos;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +36,8 @@ public class Proceed : MonoBehaviour
         buttonImage = finishButton.image;
         fadeInObj = Instantiate(fadeIn);
         Invoke("DestroyFadeIn", 2f);
-        //boardPos = GameObject.FindWithTag("Board").GetComponent<Transform>().position;
+        oldBoard = GameObject.FindWithTag("Board");
+        boardPos = oldBoard.transform.position;
     }
 
     void DestroyFadeIn()
@@ -91,7 +93,9 @@ public class Proceed : MonoBehaviour
 
         if (goDown)
         {
-            rb2d.AddForce(-transform.up * 1);
+            //rb2d.AddForce(-transform.up * 1);
+            boardPos.y -= 2 * Time.deltaTime;
+            oldBoard.transform.position = boardPos;
         }
     }
 
@@ -99,7 +103,7 @@ public class Proceed : MonoBehaviour
     {
         setNumber++;
         board = GameObject.FindWithTag("Board");
-        rb2d = board.GetComponent<Rigidbody2D>();
+        //rb2d = board.GetComponent<Rigidbody2D>();
         //rb2d.gravityScale = 1;
         goDown = true;
         Invoke("NewBoard", 1f);
