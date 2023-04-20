@@ -36,8 +36,6 @@ public class Proceed : MonoBehaviour
         buttonImage = finishButton.image;
         fadeInObj = Instantiate(fadeIn);
         Invoke("DestroyFadeIn", 2f);
-        oldBoard = GameObject.FindWithTag("Board");
-        boardPos = oldBoard.transform.position;
     }
 
     void DestroyFadeIn()
@@ -93,8 +91,12 @@ public class Proceed : MonoBehaviour
 
         if (goDown)
         {
-            //rb2d.AddForce(-transform.up * 1);
             boardPos.y -= 2 * Time.deltaTime;
+            if (oldBoard == null)
+            {
+                oldBoard = GameObject.FindWithTag("Board");
+                boardPos = oldBoard.transform.position;
+            }
             oldBoard.transform.position = boardPos;
         }
     }

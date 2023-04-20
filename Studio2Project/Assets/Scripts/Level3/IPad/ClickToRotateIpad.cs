@@ -16,7 +16,6 @@ public class ClickToRotateIpad : MonoBehaviour
     private int inTargetClick = 0;
     
     private FixedJoint2D joint2d;
-    private GameObject connectedBody;
 
     public Vector3 correctPos;
 
@@ -37,6 +36,12 @@ public class ClickToRotateIpad : MonoBehaviour
         if (!follow && ipadIsInPosition)
         {
             transform.position = correctPos;
+        }
+
+        if (Proceed.goDown)
+        {
+            ipadIsInPosition = false;
+            transform.position -= new Vector3(0, 2, 0) * Time.deltaTime;
         }
     }
 
@@ -66,12 +71,8 @@ public class ClickToRotateIpad : MonoBehaviour
                     switch (inTargetClick % 2)
                     {
                         case 1:
-                            UpdateConnectedBody();
                             follow = false;
                             ipadIsInPosition = true;
-                            //joint2d = gameObject.AddComponent<FixedJoint2D>();
-                            //joint2d.connectedBody = connectedBody.GetComponent<Rigidbody2D>();
-                            //transform.parent = connectedBody.transform;
                             break;
                         case 0:
                             follow = true;
@@ -106,10 +107,5 @@ public class ClickToRotateIpad : MonoBehaviour
                 }
             }
         }
-    }
-
-    void UpdateConnectedBody()
-    {
-        connectedBody = GameObject.FindWithTag("Board");
     }
 }

@@ -9,7 +9,7 @@ public class ClicktoRotate : MonoBehaviour
     private int inPlateClickTimes = 0;
     private int outOfPlateClickTimes = 0;
     public static char direction;
-    public static bool follow = false;
+    public static bool follow;
     private Vector2 objectPos;
     private Vector3 objectPosxyz;
 
@@ -17,9 +17,17 @@ public class ClicktoRotate : MonoBehaviour
     private int inTargetClick = 0;
     
     private FixedJoint2D joint2d;
-    private GameObject connectedBody;
+    
+    private Rigidbody2D rb2d;
+    private Vector3 clothPos;
 
     public Vector3 correctPos;
+
+    private void Start()
+    {
+        follow = false;
+        Debug.Log(clothIsInPosition);
+    }
 
     // Update is called once per frame
     void Update()
@@ -38,6 +46,12 @@ public class ClicktoRotate : MonoBehaviour
         if (!follow && clothIsInPosition)
         {
             transform.position = correctPos;
+        }
+
+        if (Proceed.goDown)
+        {
+            clothIsInPosition = false;
+            transform.position -= new Vector3(0, 2, 0) * Time.deltaTime;
         }
     }
 
@@ -68,17 +82,12 @@ public class ClicktoRotate : MonoBehaviour
                     switch (inTargetClick % 2)
                     {
                         case 1:
-                            UpdateConnectedBody();
                             follow = false;
                             clothIsInPosition = true;
-                            //joint2d = gameObject.AddComponent<FixedJoint2D>();
-                            //joint2d.connectedBody = connectedBody.GetComponent<Rigidbody2D>();
-                            //transform.parent = connectedBody.transform;
                             break;
                         case 0:
                             follow = true;
                             clothIsInPosition = false;
-                            Destroy(joint2d);
                             break;
                     }
                 }
@@ -108,10 +117,5 @@ public class ClicktoRotate : MonoBehaviour
                 }
             }
         }
-    }
-    
-    private void UpdateConnectedBody()
-    {
-        connectedBody = GameObject.FindWithTag("Board");
     }
 }
