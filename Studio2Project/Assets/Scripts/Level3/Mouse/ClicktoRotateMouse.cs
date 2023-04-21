@@ -28,9 +28,10 @@ public class ClicktoRotateMouse : MonoBehaviour
     {
         follow = false;
         spMouse = GetComponent<SpriteRenderer>();
-        randomNum = (int)Random.Range(0, 5);
-        spMouse.sprite = spList[randomNum];
-        Debug.Log("Mouse: " + randomNum);
+        //randomNum = (int)Random.Range(0, 5);
+        //spMouse.sprite = spList[Proceed.setNumber];
+        spMouse.sprite = spList[Proceed.setNumber];
+        //Debug.Log("Mouse: " + randomNum);
         mouseIsInPosition = false;
         follow = false;
     }

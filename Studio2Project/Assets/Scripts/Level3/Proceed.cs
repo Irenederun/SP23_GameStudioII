@@ -84,7 +84,7 @@ public class Proceed : MonoBehaviour
             }
         }
 
-        if (setNumber == 5 || Input.GetKey(KeyCode.R))
+        if (setNumber == 6 || Input.GetKey(KeyCode.R))
         {
             Instantiate(fadeOut);
             Invoke("LoadScene", 2f);

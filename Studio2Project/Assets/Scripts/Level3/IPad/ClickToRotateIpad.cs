@@ -26,8 +26,9 @@ public class ClickToRotateIpad : MonoBehaviour
     {
         follow = false;
         spIpad = GetComponent<SpriteRenderer>();
-        randomNum = (int)Random.Range(0, 5);
-        spIpad.sprite = spList[randomNum];
+        //randomNum = (int)Random.Range(0, 5);
+        //spIpad.sprite = spList[randomNum];
+        spIpad.sprite = spList[Proceed.setNumber];
         ipadIsInPosition = false;
         follow = false;
         Debug.Log("Ipad: " + randomNum);
