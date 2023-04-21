@@ -32,11 +32,12 @@ public class ClicktoRotate : MonoBehaviour
     {
         follow = false;
         spCloth = GetComponent<SpriteRenderer>();
-        randomNum = (int)Random.Range(0, 5);
-        spCloth.sprite = spList[randomNum];
+        //randomNum = (int)Random.Range(0, 5);
+        //spCloth.sprite = spList[randomNum];
+        spCloth.sprite = spList[Proceed.setNumber];
         clothIsInPosition = false;
         follow = false;
-        Debug.Log("Cloth: " + randomNum);
+        //Debug.Log("Cloth: " + randomNum);
     }
 
     // Update is called once per frame
