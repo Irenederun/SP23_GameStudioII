@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - OperationTabble
   - Board
+  - slot
   layers:
   - Default
   - TransparentFX
