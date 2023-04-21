@@ -10,7 +10,7 @@ public class MouseLeftToRight : MonoBehaviour
     public GameObject ratNoHeart;
     public GameObject ratWithHeart;
     private GameObject heartMouse;
-    public Animator anim;
+    private Animator anim;
     private Vector3 ratPos = new Vector3 (5.95f, -1.21f, 10f);
     public static bool cheeseRat = false;
     public static bool diamondRat = false;
@@ -23,6 +23,7 @@ public class MouseLeftToRight : MonoBehaviour
         {
             Destroy(col.gameObject);
             Invoke("RatNoHeart", 1f);
+            return;
         }
         
         if (col.gameObject.name.Contains("WrongRat"))

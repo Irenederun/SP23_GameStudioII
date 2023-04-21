@@ -1,14 +1,13 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ClickToRotateIpad : MonoBehaviour
 {
     private int inPlateClickTimes = 0;
     private int outOfPlateClickTimes = 0;
     public static char direction;
-    public static bool follow = false;
+    public static bool follow;
     private Vector2 objectPos;
     private Vector3 objectPosxyz;
     
@@ -18,6 +17,21 @@ public class ClickToRotateIpad : MonoBehaviour
     private FixedJoint2D joint2d;
 
     public Vector3 correctPos;
+    
+    private SpriteRenderer spIpad;
+    public List<Sprite> spList = new List<Sprite>();
+    private int randomNum;
+
+    private void Start()
+    {
+        follow = false;
+        spIpad = GetComponent<SpriteRenderer>();
+        randomNum = (int)Random.Range(0, 5);
+        spIpad.sprite = spList[randomNum];
+        ipadIsInPosition = false;
+        follow = false;
+        Debug.Log("Ipad: " + randomNum);
+    }
 
     // Update is called once per frame
     void Update()

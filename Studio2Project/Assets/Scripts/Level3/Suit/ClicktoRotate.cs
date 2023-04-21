@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ClicktoRotate : MonoBehaviour
 {
@@ -22,11 +23,20 @@ public class ClicktoRotate : MonoBehaviour
     private Vector3 clothPos;
 
     public Vector3 correctPos;
+    
+    private SpriteRenderer spCloth;
+    public List<Sprite> spList = new List<Sprite>();
+    private int randomNum;
 
     private void Start()
     {
         follow = false;
-        Debug.Log(clothIsInPosition);
+        spCloth = GetComponent<SpriteRenderer>();
+        randomNum = (int)Random.Range(0, 5);
+        spCloth.sprite = spList[randomNum];
+        clothIsInPosition = false;
+        follow = false;
+        Debug.Log("Cloth: " + randomNum);
     }
 
     // Update is called once per frame

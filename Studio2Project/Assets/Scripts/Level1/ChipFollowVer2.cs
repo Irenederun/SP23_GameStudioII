@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 public class ChipFollowVer2 : MonoBehaviour
@@ -20,6 +21,7 @@ public class ChipFollowVer2 : MonoBehaviour
 
         if (followng)
         {
+            Cursor.visible = false;
             objectPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             objectPosxyz = objectPos;
             transform.position = objectPosxyz;

@@ -80,7 +80,7 @@ public class ClicktoChange : MonoBehaviour
             
             UpdateMousePosition();
             thisHeart = Instantiate(heart, objectPosxyz, Quaternion.identity);
-            Cursor.visible = false;
+            //Cursor.visible = false;
             
             switch (GameManager.instance.NumberCount)
             {

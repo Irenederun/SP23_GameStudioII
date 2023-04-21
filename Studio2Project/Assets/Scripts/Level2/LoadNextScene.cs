@@ -26,7 +26,7 @@ public class LoadNextScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("NUmber of mouse " + mouseNumber);
+        Debug.Log("Number of mouse " + mouseNumber);
         if (Input.GetKey(KeyCode.Space))
         {
             SceneManager.LoadScene(1);
@@ -41,6 +41,7 @@ public class LoadNextScene : MonoBehaviour
         {
             Instantiate(fadeOut);
             Invoke("LoadScene", 2f);
+            mouseNumber = 11;
         }
     }
 

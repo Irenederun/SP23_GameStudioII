@@ -23,7 +23,7 @@ public class Proceed : MonoBehaviour
     private GameObject fadeInObj;
     public GameObject fadeOut;
     
-    private int setNumber = 0;
+    public static int setNumber;
 
     public static bool goDown;
     private GameObject oldBoard;
@@ -32,6 +32,7 @@ public class Proceed : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        setNumber = 0;
         goDown = false;
         buttonImage = finishButton.image;
         fadeInObj = Instantiate(fadeIn);
@@ -105,8 +106,6 @@ public class Proceed : MonoBehaviour
     {
         setNumber++;
         board = GameObject.FindWithTag("Board");
-        //rb2d = board.GetComponent<Rigidbody2D>();
-        //rb2d.gravityScale = 1;
         goDown = true;
         Invoke("NewBoard", 1f);
     }

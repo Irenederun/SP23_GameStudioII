@@ -1,14 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Fungus;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ClicktoRotateMouse : MonoBehaviour
 {
     private int inPlateClickTimes = 0;
     private int outOfPlateClickTimes = 0;
     public static char direction;
-    public static bool follow = false;
+    public static bool follow;
     private Vector2 objectPos;
     private Vector3 objectPosxyz;
     private FixedJoint2D joint2d;
@@ -17,7 +19,21 @@ public class ClicktoRotateMouse : MonoBehaviour
     private int inTargetClick = 0;
 
     public Vector3 correctPos;
+    
+    private SpriteRenderer spMouse;
+    public List<Sprite> spList = new List<Sprite>();
+    private int randomNum;
 
+    private void Start()
+    {
+        follow = false;
+        spMouse = GetComponent<SpriteRenderer>();
+        randomNum = (int)Random.Range(0, 5);
+        spMouse.sprite = spList[randomNum];
+        Debug.Log("Mouse: " + randomNum);
+        mouseIsInPosition = false;
+        follow = false;
+    }
 
     // Update is called once per frame
     void Update()
