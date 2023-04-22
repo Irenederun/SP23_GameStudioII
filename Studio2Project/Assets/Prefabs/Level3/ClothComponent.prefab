@@ -30,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 2282988906297637787}
   m_LocalRotation: {x: -0, y: -0, z: -0.006800901, w: 0.99997693}
   m_LocalPosition: {x: -6.3599997, y: -1.7, z: 0.32}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.36, y: 0.36, z: 0.36}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: d501f229dadb6464bb7fe33df062602d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fa7b8983a9b71d9468aabbdad16020dc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,18 +101,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.09587407, y: -0.00936842}
+  m_Offset: {x: -0.30654335, y: -0.046935797}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.74, y: 2.14}
+    oldSize: {x: 6.56, y: 5.29}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.3143582, y: 1.9183545}
+  m_Size: {x: 5.347682, y: 4.147366}
   m_EdgeRadius: 0
 --- !u!50 &2282988906297637785
 Rigidbody2D:
@@ -149,11 +149,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctPos: {x: 2.230538, y: 1.808383, z: 0}
   spList:
-  - {fileID: 21300000, guid: d501f229dadb6464bb7fe33df062602d, type: 3}
-  - {fileID: 21300000, guid: d501f229dadb6464bb7fe33df062602d, type: 3}
-  - {fileID: 21300000, guid: d501f229dadb6464bb7fe33df062602d, type: 3}
-  - {fileID: 21300000, guid: d501f229dadb6464bb7fe33df062602d, type: 3}
-  - {fileID: 21300000, guid: d501f229dadb6464bb7fe33df062602d, type: 3}
+  - {fileID: 21300000, guid: fa7b8983a9b71d9468aabbdad16020dc, type: 3}
+  - {fileID: 21300000, guid: ab11c5a27b449ae4796439ef365e9416, type: 3}
+  - {fileID: 21300000, guid: 59da73693e4468e4d9bef10bfc47d7bb, type: 3}
+  - {fileID: 21300000, guid: fa7b8983a9b71d9468aabbdad16020dc, type: 3}
+  - {fileID: 21300000, guid: ab11c5a27b449ae4796439ef365e9416, type: 3}
+  - {fileID: 21300000, guid: 59da73693e4468e4d9bef10bfc47d7bb, type: 3}
 --- !u!114 &2282988906297637784
 MonoBehaviour:
   m_ObjectHideFlags: 0
