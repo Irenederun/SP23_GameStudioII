@@ -24,6 +24,7 @@ public class ClickToRotateIpad : MonoBehaviour
 
     private void Start()
     {
+        direction = 'u';
         follow = false;
         spIpad = GetComponent<SpriteRenderer>();
         //randomNum = (int)Random.Range(0, 5);

@@ -74,6 +74,6 @@ public class WASD : MonoBehaviour
     
     private void LoadScene3()
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(6);
     }
 }

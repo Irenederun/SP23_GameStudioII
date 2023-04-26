@@ -14,8 +14,6 @@ GameObject:
   - component: {fileID: 2688429909167613583}
   - component: {fileID: 2688429909167613580}
   - component: {fileID: 990211009}
-  - component: {fileID: 990211010}
-  - component: {fileID: 8029501869939008329}
   m_Layer: 0
   m_Name: WrongRat
   m_TagString: Untagged
@@ -34,7 +32,8 @@ Transform:
   m_LocalPosition: {x: -4.74, y: 4.1, z: 0.112098396}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8093430901834892449}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -155,13 +154,46 @@ CapsuleCollider2D:
   m_Offset: {x: 0.088186376, y: -0.2850449}
   m_Size: {x: 0.75981414, y: 0.7220248}
   m_Direction: 1
---- !u!58 &990211010
+--- !u!1 &4890872613347687241
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8093430901834892449}
+  - component: {fileID: 7079199899149663936}
+  - component: {fileID: 395048841445473702}
+  m_Layer: 21
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8093430901834892449
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4890872613347687241}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2688429909167613576}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &7079199899149663936
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2688429909167613588}
+  m_GameObject: {fileID: 4890872613347687241}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -171,13 +203,13 @@ CircleCollider2D:
   m_Offset: {x: 0.3248767, y: 0.030613756}
   serializedVersion: 2
   m_Radius: 0.25325567
---- !u!58 &8029501869939008329
+--- !u!58 &395048841445473702
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2688429909167613588}
+  m_GameObject: {fileID: 4890872613347687241}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}

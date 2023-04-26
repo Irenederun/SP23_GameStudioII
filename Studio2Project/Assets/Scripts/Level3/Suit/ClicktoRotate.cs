@@ -30,6 +30,7 @@ public class ClicktoRotate : MonoBehaviour
 
     private void Start()
     {
+        direction = 'u';
         follow = false;
         spCloth = GetComponent<SpriteRenderer>();
         //randomNum = (int)Random.Range(0, 5);
