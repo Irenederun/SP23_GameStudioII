@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fa03b384972b074d8c812c2bb7dda56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correctPos: {x: 2.230538, y: 1.808383, z: 0}
+  correctPos: {x: 2.6, y: -0.3, z: 0}
   spList:
   - {fileID: 21300000, guid: fa7b8983a9b71d9468aabbdad16020dc, type: 3}
   - {fileID: 21300000, guid: ab11c5a27b449ae4796439ef365e9416, type: 3}

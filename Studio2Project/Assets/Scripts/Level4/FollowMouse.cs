@@ -1,5 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FollowMouse : MonoBehaviour
@@ -11,28 +14,28 @@ public class FollowMouse : MonoBehaviour
 
     void Update()
     {
-
         Vector3 mousepos = Input.mousePosition;
         mousepos.z = Camera.main.nearClipPlane;
         Vector3 worldpoz = Camera.main.ScreenToWorldPoint(mousepos);
-
-        //Debug.Log(worldpoz);
-        //Debug.Log(Camera.main.ScreenToWorldPosition(Input.mousePosition));
-
+        //Cursor.visible = false;
         transform.position = worldpoz;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
         Debug.Log("hello");
-        // Check if the other collider has the tag "slot"
-        if (other.gameObject.name.Contains("Slot"))
+        if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("meet");
-            // Destroy the coin game object
-            Destroy(gameObject);
-            // play an audio here;
+            // Check if the other collider has the tag "slot"
+            if (other.gameObject.name.Contains("Slot"))
+            {
+                Debug.Log("meet");
+                // Destroy the coin game object
+                Destroy(gameObject);
+                Cursor.visible = true;
+                // play an audio here;
 
+            }
         }
     }
 }

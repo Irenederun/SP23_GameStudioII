@@ -8,13 +8,26 @@ public class gameManager : MonoBehaviour
     public GameObject objectC;
 
     private GameObject objectA;
+    
+    public GameObject fadeOut;
+    public GameObject fadeIn;
+    private GameObject fadeInObj;
+
 
     void Start()
     {
         // 找到场景中名为 "ObjectA" 的物体
         objectA = GameObject.Find("Coin");
+        
+        fadeInObj = Instantiate(fadeIn);
+        Invoke("DestroyFadeIn", 2f);
     }
 
+    private void DestroyFadeIn()
+    {
+        Destroy(fadeInObj);
+    }
+    
     void Update()
     {
         // 检查 objectA 是否已被销毁
