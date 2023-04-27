@@ -7,6 +7,7 @@ public class KnobRotate : MonoBehaviour
     private bool isDragging = false;
     private Vector3 dragStartPos;
     private float startAngle;
+    public AudioSource sound;
 
     private void Update()
     {
@@ -19,6 +20,7 @@ public class KnobRotate : MonoBehaviour
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             if (angle >= 180f)
             {
+                sound.Play(0);   
                 StartCoroutine(MoveCamera());
             }
         }

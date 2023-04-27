@@ -11,6 +11,7 @@ public class RatOnBeltRight : MonoBehaviour
     private GameObject childObj;
     private Animator anim;
     private Animator animScanned;
+    private bool goUp = false;
     
     void Awake()
     {
@@ -51,16 +52,24 @@ public class RatOnBeltRight : MonoBehaviour
             MouseOnBelt.instance = null;
         }
 
-        if (clawCollided)
+        // if (clawCollided)
+        // {
+        //     anim = GetComponent<Animator>();
+        //     anim.SetBool("clawedDeadMouse", true);
+        //     Invoke("clawAwayMouse", 1f);
+        // }
+
+        if (goUp)
         {
-            anim = GetComponent<Animator>();
-            anim.SetBool("clawedDeadMouse", true);
-            Invoke("clawAwayMouse", 1f);
+            ratPos.y += ClawAway.speed * Time.deltaTime;
+            transform.position = ratPos;  
         }
     }
 
-    private void clawAwayMouse()
+    public void clawAwayMouse()
     {
+        anim = GetComponent<Animator>();
+        anim.SetBool("clawedDeadMouse", true);
         childObj = gameObject.transform.GetChild(0).gameObject;
         animScanned = childObj.GetComponent<Animator>();
         if (MouseLeftToRight.diamondRat)
@@ -75,9 +84,12 @@ public class RatOnBeltRight : MonoBehaviour
         {
             animScanned.SetBool("defaultClawed", true);
         }
-        ratPos.y += ClawAway.speed * Time.deltaTime;
-        transform.position = ratPos;
-        anim.SetBool("clawedDeadMouse", false);
+
+        goUp = true;
+
+        //ratPos.y += ClawAway.speed * Time.deltaTime;
+        //transform.position = ratPos;
+        //anim.SetBool("clawedDeadMouse", false);
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -85,6 +97,7 @@ public class RatOnBeltRight : MonoBehaviour
         if (col.gameObject.name.Contains("Claw"))
         {
             clawCollided = true;
+            col.gameObject.GetComponent<ClawAway>().collidedRat = gameObject;
             XRayFollow.clawAway = false;
         }
     }

@@ -1,6 +1,3 @@
-
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ClawAway : MonoBehaviour
@@ -9,6 +6,8 @@ public class ClawAway : MonoBehaviour
     private Vector3 clawPosInitial;
     public static float speed = 3f;
     private Animator anim;
+    public GameObject collidedRat;
+    private bool goUp;
     
     // Start is called before the first frame update
     void Start()
@@ -30,12 +29,20 @@ public class ClawAway : MonoBehaviour
         if (RatOnBeltRight.clawCollided)
         {
             anim.SetBool("catchMouse", true);
-            Invoke("clawReturn", 1f);
+            //Invoke("clawReturn", 1f);
+        }
+
+        if (goUp)
+        {
+            clawPos.y += speed * Time.deltaTime;
+            transform.position = clawPos;
         }
 
         if (DestroyOnOut.clawReturn)
         {
             RatOnBeltRight.clawCollided = false;
+            goUp = false;
+            anim.SetBool("catchMouse", false);
             if (clawPos.y > clawPosInitial.y)
             {
                 clawPos.y -= 2f * speed * Time.deltaTime;
@@ -50,10 +57,21 @@ public class ClawAway : MonoBehaviour
         }
     }
 
-    private void clawReturn()
+    // private void clawReturn()
+    // {
+    //     clawPos.y += speed * Time.deltaTime;
+    //     transform.position = clawPos;
+    //     anim.SetBool("catchMouse", false);
+    // }
+
+    public void RatDead()
     {
-        clawPos.y += speed * Time.deltaTime;
-        transform.position = clawPos;
-        anim.SetBool("catchMouse", false);
+        Debug.Log("NOW");
+        if (collidedRat != null)
+        {
+            collidedRat.GetComponent<RatOnBeltRight>().clawAwayMouse();
+            //anim.SetBool("catchMouse", false);
+            goUp = true;
+        }
     }
 }
