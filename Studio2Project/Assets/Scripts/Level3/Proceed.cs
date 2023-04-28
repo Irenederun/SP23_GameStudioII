@@ -29,6 +29,9 @@ public class Proceed : MonoBehaviour
     private GameObject oldBoard;
     private Vector3 boardPos;
 
+    public GameObject leftPlate;
+    public GameObject rightPlate;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -72,7 +75,7 @@ public class Proceed : MonoBehaviour
         {
             newBoardPos = newBoardObj.transform.position;
             
-            if (newBoardPos.y > 1.01f)
+            if (newBoardPos.y > 0.81f)
             {
                 newBoardPos.y -= 2f * Time.deltaTime; 
                 newBoardObj.transform.position = newBoardPos;
@@ -80,7 +83,7 @@ public class Proceed : MonoBehaviour
             else
             {
                 newBoardObj = null;
-                InstantiateNewObjs();
+                //InstantiateNewObjs();
             }
         }
 
@@ -107,12 +110,14 @@ public class Proceed : MonoBehaviour
         setNumber++;
         board = GameObject.FindWithTag("Board");
         goDown = true;
+        leftPlate.GetComponent<MovePlateLeft>().MoveOutward();
+        rightPlate.GetComponent<MovePlateRight>().MoveOutward();
         Invoke("NewBoard", 1f);
     }
 
     public void NewBoard()
     {
-        newBoardObj = Instantiate(newBoard, new Vector3(0.57f, 9.5f, 0), Quaternion.identity);
+        newBoardObj = Instantiate(newBoard, new Vector3(0.21f, 9.5f, 0), Quaternion.identity);
     }
 
     private void LoadScene()
@@ -120,10 +125,15 @@ public class Proceed : MonoBehaviour
         SceneManager.LoadScene(5);
     }
 
-    private void InstantiateNewObjs()
+    public void InstantiateNewObjs()
     {
-        Instantiate(mouse);
-        Instantiate(cloth);
-        Instantiate(ipad);
+        GameObject mouseNew = Instantiate(mouse, new Vector3(-10.32f, -0.44f, 0), Quaternion.identity);
+        mouseNew.GetComponent<MoveToPos>().MoveToDestPos();
+        leftPlate.GetComponent<MovePlateLeft>().MoveInward();
+        GameObject clothNew = Instantiate(cloth, new Vector3(10.4f, 3.24f, 0), Quaternion.identity);
+        clothNew.GetComponent<MoveToPosCloth>().MoveToDestPos();
+        GameObject ipadNew = Instantiate(ipad, new Vector3(10.31f, - 1.3f, 0), Quaternion.identity);
+        ipadNew.GetComponent<MoveToPosIpad>().MoveToDestPos();
+        rightPlate.GetComponent<MovePlateRight>().MoveInward();
     }
 }
