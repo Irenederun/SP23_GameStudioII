@@ -14,8 +14,8 @@ public class MovePlateLeft : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        initialX = -6.31f;
-        destX = -10.06f;
+        initialX = -6.59f;
+        destX = -10.34f;
         movingPos = transform.position;
     }
 

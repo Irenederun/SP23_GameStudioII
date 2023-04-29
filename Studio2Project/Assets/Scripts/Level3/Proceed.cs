@@ -117,7 +117,7 @@ public class Proceed : MonoBehaviour
 
     public void NewBoard()
     {
-        newBoardObj = Instantiate(newBoard, new Vector3(0.21f, 9.5f, 0), Quaternion.identity);
+        newBoardObj = Instantiate(newBoard, new Vector3(0.05f, 9.5f, 0), Quaternion.identity);
     }
 
     private void LoadScene()
@@ -127,12 +127,12 @@ public class Proceed : MonoBehaviour
 
     public void InstantiateNewObjs()
     {
-        GameObject mouseNew = Instantiate(mouse, new Vector3(-10.32f, -0.44f, 0), Quaternion.identity);
+        GameObject mouseNew = Instantiate(mouse, new Vector3(-10.32f, 0.22f, 0), Quaternion.identity);
         mouseNew.GetComponent<MoveToPos>().MoveToDestPos();
         leftPlate.GetComponent<MovePlateLeft>().MoveInward();
         GameObject clothNew = Instantiate(cloth, new Vector3(10.4f, 3.24f, 0), Quaternion.identity);
         clothNew.GetComponent<MoveToPosCloth>().MoveToDestPos();
-        GameObject ipadNew = Instantiate(ipad, new Vector3(10.31f, - 1.3f, 0), Quaternion.identity);
+        GameObject ipadNew = Instantiate(ipad, new Vector3(10.31f, 0.2f, 0), Quaternion.identity);
         ipadNew.GetComponent<MoveToPosIpad>().MoveToDestPos();
         rightPlate.GetComponent<MovePlateRight>().MoveInward();
     }
