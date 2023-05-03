@@ -40,6 +40,11 @@ public class ClicktoRotateMouse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log("follow: " + follow);
+        //Debug.Log("Direction: " + direction);
+        //Debug.Log("is In plate: " + MousePlate.instance.inPlate);
+        //Debug.Log("is in position: " + mouseIsInPosition);
+        
         if (follow)
         {
             objectPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

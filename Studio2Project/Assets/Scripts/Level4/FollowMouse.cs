@@ -21,21 +21,20 @@ public class FollowMouse : MonoBehaviour
         transform.position = worldpoz;
     }
 
-    void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log("hello");
-        if (Input.GetMouseButtonDown(0))
-        {
+        Debug.Log("in trigger");
             // Check if the other collider has the tag "slot"
             if (other.gameObject.name.Contains("Slot"))
             {
-                Debug.Log("meet");
-                // Destroy the coin game object
-                Destroy(gameObject);
-                Cursor.visible = true;
-                // play an audio here;
-
+                Debug.Log("collided with slot");
+                if (Input.GetMouseButton(0))
+                {
+                    // Destroy the coin game object
+                    Destroy(gameObject);
+                    //Cursor.visible = true;
+                    // play an audio here;
+                }
             }
-        }
     }
 }

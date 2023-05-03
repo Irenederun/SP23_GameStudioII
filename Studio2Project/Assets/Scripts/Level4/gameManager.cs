@@ -39,7 +39,7 @@ public class gameManager : MonoBehaviour
             objectC.SetActive(true);
 
             // 销毁 GameManager 组件
-            Destroy(this);
+            //Destroy(this);
         }
     }
 }

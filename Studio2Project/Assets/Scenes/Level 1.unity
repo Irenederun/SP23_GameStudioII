@@ -1757,7 +1757,7 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!1 &1546915181
@@ -2546,7 +2546,7 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!70 &2043919976
@@ -2790,22 +2790,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8560765337114176552, guid: 8308b184a5cde644fba26f5958f24537, type: 3}
-      propertyPath: m_Size.x
-      value: 0.8601322
-      objectReference: {fileID: 0}
-    - target: {fileID: 8560765337114176552, guid: 8308b184a5cde644fba26f5958f24537, type: 3}
-      propertyPath: m_Size.y
-      value: 0.924646
-      objectReference: {fileID: 0}
-    - target: {fileID: 8560765337114176552, guid: 8308b184a5cde644fba26f5958f24537, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.09324515
-      objectReference: {fileID: 0}
-    - target: {fileID: 8560765337114176552, guid: 8308b184a5cde644fba26f5958f24537, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.03767699
-      objectReference: {fileID: 0}
     - target: {fileID: 8560765337114176553, guid: 8308b184a5cde644fba26f5958f24537, type: 3}
       propertyPath: m_Name
       value: NoteBook
@@ -2853,18 +2837,6 @@ PrefabInstance:
     - target: {fileID: 8560765337114176566, guid: 8308b184a5cde644fba26f5958f24537, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8560765337114176567, guid: 8308b184a5cde644fba26f5958f24537, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8560765337114176567, guid: 8308b184a5cde644fba26f5958f24537, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8560765337114176567, guid: 8308b184a5cde644fba26f5958f24537, type: 3}
-      propertyPath: m_Color.r
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8308b184a5cde644fba26f5958f24537, type: 3}
