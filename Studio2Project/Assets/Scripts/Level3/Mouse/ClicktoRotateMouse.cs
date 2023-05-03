@@ -24,6 +24,8 @@ public class ClicktoRotateMouse : MonoBehaviour
     public List<Sprite> spList = new List<Sprite>();
     private int randomNum;
 
+    private GameObject mousePlate;
+
     private void Start()
     {
         direction = 'u';
@@ -35,15 +37,23 @@ public class ClicktoRotateMouse : MonoBehaviour
         //Debug.Log("Mouse: " + randomNum);
         mouseIsInPosition = false;
         follow = false;
+
+        if (MousePlate.instance == null)
+        {
+            GameObject.FindGameObjectsWithTag("MousePlate");
+            MousePlate.instance = mousePlate.GetComponent<MousePlate>();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("follow: " + follow);
-        //Debug.Log("Direction: " + direction);
-        //Debug.Log("is In plate: " + MousePlate.instance.inPlate);
-        //Debug.Log("is in position: " + mouseIsInPosition);
+        // Debug.Log("follow: " + follow);
+        // Debug.Log("Direction: " + direction);
+        // Debug.Log("is In plate: " + MousePlate.instance.inPlate);
+        // Debug.Log("is in position: " + mouseIsInPosition);
+        
+        //Debug.Log("Setnumber: " + Proceed.setNumber);
         
         if (follow)
         {

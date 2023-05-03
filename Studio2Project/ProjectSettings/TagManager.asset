@@ -9,6 +9,9 @@ TagManager:
   - OperationTabble
   - Board
   - slot
+  - MousePlate
+  - ClothPlate
+  - IpadPlate
   layers:
   - Default
   - TransparentFX

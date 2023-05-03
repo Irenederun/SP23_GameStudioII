@@ -117,7 +117,7 @@ public class Proceed : MonoBehaviour
 
     public void NewBoard()
     {
-        newBoardObj = Instantiate(newBoard, new Vector3(0.05f, 9.5f, 0), Quaternion.identity);
+        newBoardObj = Instantiate(newBoard, new Vector3(0.05f, 9.5f, 1.73f), Quaternion.identity);
     }
 
     private void LoadScene()

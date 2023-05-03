@@ -28,6 +28,8 @@ public class ClicktoRotate : MonoBehaviour
     public List<Sprite> spList = new List<Sprite>();
     private int randomNum;
 
+    private GameObject clothPlate;
+    
     private void Start()
     {
         direction = 'u';
@@ -39,6 +41,12 @@ public class ClicktoRotate : MonoBehaviour
         clothIsInPosition = false;
         follow = false;
         //Debug.Log("Cloth: " + randomNum);
+        
+        if (ComponentPlate.instance == null)
+        {
+            GameObject.FindGameObjectsWithTag("ClothPlate");
+            ComponentPlate.instance = clothPlate.GetComponent<ComponentPlate>();
+        }
     }
 
     // Update is called once per frame

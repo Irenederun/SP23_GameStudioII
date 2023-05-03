@@ -8,7 +8,7 @@ public class MousePlate : MonoBehaviour
     public bool inPlate; 
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         instance = this;
     }

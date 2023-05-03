@@ -22,6 +22,8 @@ public class ClickToRotateIpad : MonoBehaviour
     public List<Sprite> spList = new List<Sprite>();
     private int randomNum;
 
+    private GameObject ipadPlate;
+
     private void Start()
     {
         direction = 'u';
@@ -32,7 +34,12 @@ public class ClickToRotateIpad : MonoBehaviour
         spIpad.sprite = spList[Proceed.setNumber];
         ipadIsInPosition = false;
         follow = false;
-        Debug.Log("Ipad: " + randomNum);
+        
+        if (IpadPlate.instance == null)
+        {
+            GameObject.FindGameObjectsWithTag("IpadPlate");
+            IpadPlate.instance = ipadPlate.GetComponent<IpadPlate>();
+        }
     }
 
     // Update is called once per frame
@@ -44,6 +51,7 @@ public class ClickToRotateIpad : MonoBehaviour
             objectPosxyz = objectPos;
             transform.position = objectPosxyz;
         }
+            
         if (!follow && IpadPlate.instance.inPlate)
         {
             transform.rotation = Quaternion.identity;
