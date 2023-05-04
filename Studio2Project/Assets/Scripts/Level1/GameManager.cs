@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     public GameObject fadeOut;
     public GameObject fadeIn;
     private GameObject fadeInObj;
+
+    public AudioSource conveyorBelt;
     
     private void Awake()
     {
@@ -54,6 +56,7 @@ public class GameManager : MonoBehaviour
             if (numberCount == 10)
             {
                 Instantiate(fadeOut);
+                conveyorBelt.Stop();
                 Invoke("LoadScene", 2f);
             }
         }
@@ -82,6 +85,10 @@ public class GameManager : MonoBehaviour
                 Vector3 platePosxyz = platePos;
 
                 Instantiate(operationObject, platePosxyz, Quaternion.identity);
+                if (conveyorBelt.isPlaying)
+                {
+                    conveyorBelt.Stop();
+                }
                 objIsDestroyed = true;
             }
         }
@@ -110,8 +117,13 @@ public class GameManager : MonoBehaviour
 
     public void Spawn()
     {
-        Instantiate(conveyorbeltMouse, new Vector3(-7.3f, 7f, 10), Quaternion.identity);
+        Instantiate(conveyorbeltMouse, new Vector3(-7.42f, 7f, 10), Quaternion.identity);
         buttonPressable = false;
+        // if (conveyorBelt.isPlaying)
+        // {
+        //     conveyorBelt.Stop();
+        // }
+        // conveyorBelt.Play(0);
         //Invoke("EnsableButton", 0.7f);
     }
 

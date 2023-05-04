@@ -102,7 +102,7 @@ MonoBehaviour:
   awayMouse: {fileID: 7515598896053750596, guid: 56735f3cc12ed1740b9258eb9f7b0a6f, type: 3}
   dragMouseSprite:
   - {fileID: 21300000, guid: b4960a4a306f6473cb2fc05e47e76198, type: 3}
-  - {fileID: 21300000, guid: 954e30af66aa3304a85f71af4e31709f, type: 3}
+  - {fileID: 21300000, guid: b4960a4a306f6473cb2fc05e47e76198, type: 3}
   - {fileID: 21300000, guid: b4960a4a306f6473cb2fc05e47e76198, type: 3}
   - {fileID: 21300000, guid: b4960a4a306f6473cb2fc05e47e76198, type: 3}
   - {fileID: 21300000, guid: b4960a4a306f6473cb2fc05e47e76198, type: 3}

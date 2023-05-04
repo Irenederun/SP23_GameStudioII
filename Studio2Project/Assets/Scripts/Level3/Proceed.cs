@@ -31,6 +31,8 @@ public class Proceed : MonoBehaviour
 
     public GameObject leftPlate;
     public GameObject rightPlate;
+    
+    public AudioSource conveyorBelt;
 
     // Start is called before the first frame update
     void Start()
@@ -83,6 +85,10 @@ public class Proceed : MonoBehaviour
             else
             {
                 newBoardObj = null;
+                if (conveyorBelt.isPlaying)
+                {
+                    conveyorBelt.Stop();
+                }
                 //InstantiateNewObjs();
             }
         }
@@ -90,6 +96,7 @@ public class Proceed : MonoBehaviour
         if (setNumber == 6 || Input.GetKey(KeyCode.R))
         {
             Instantiate(fadeOut);
+            conveyorBelt.Stop();
             Invoke("LoadScene", 2f);
         }
 
@@ -110,6 +117,7 @@ public class Proceed : MonoBehaviour
         setNumber++;
         board = GameObject.FindWithTag("Board");
         goDown = true;
+        conveyorBelt.Play(0);
         leftPlate.GetComponent<MovePlateLeft>().MoveOutward();
         rightPlate.GetComponent<MovePlateRight>().MoveOutward();
         Invoke("NewBoard", 1f);

@@ -12,6 +12,7 @@ TagManager:
   - MousePlate
   - ClothPlate
   - IpadPlate
+  - audio
   layers:
   - Default
   - TransparentFX

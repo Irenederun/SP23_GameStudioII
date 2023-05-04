@@ -8,10 +8,16 @@ public class AwayMouse : MonoBehaviour
     public List<Sprite> awayMouseSprite;
     private SpriteRenderer mouseRenderer;
 
+    private GameObject audioHolder;
+    public AudioSource conveyorBelt;
+
     private void Start()
     {
          mouseRenderer = gameObject.GetComponent<SpriteRenderer>();
          mouseRenderer.sprite = awayMouseSprite[GameManager.instance.NumberCount - 1];
+         audioHolder = GameObject.FindWithTag("audio");
+         conveyorBelt = audioHolder.GetComponent<AudioSource>();
+         conveyorBelt.Play(0);
     }
 
     void Update()
@@ -26,6 +32,10 @@ public class AwayMouse : MonoBehaviour
         if (col.gameObject.layer == 10)
         {
             Debug.Log("Destroyed Out!");
+            if (GameManager.buttonPressable)
+            {
+                conveyorBelt.Stop();
+            }
             Destroy(this.gameObject);
         }
     }

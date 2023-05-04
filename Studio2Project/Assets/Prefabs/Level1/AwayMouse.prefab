@@ -101,7 +101,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   awayMouseSprite:
   - {fileID: 21300000, guid: b4960a4a306f6473cb2fc05e47e76198, type: 3}
-  - {fileID: 21300000, guid: 954e30af66aa3304a85f71af4e31709f, type: 3}
   - {fileID: 21300000, guid: b4960a4a306f6473cb2fc05e47e76198, type: 3}
   - {fileID: 21300000, guid: b4960a4a306f6473cb2fc05e47e76198, type: 3}
   - {fileID: 21300000, guid: b4960a4a306f6473cb2fc05e47e76198, type: 3}
@@ -110,6 +109,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b4960a4a306f6473cb2fc05e47e76198, type: 3}
   - {fileID: 21300000, guid: b4960a4a306f6473cb2fc05e47e76198, type: 3}
   - {fileID: 21300000, guid: b4960a4a306f6473cb2fc05e47e76198, type: 3}
+  - {fileID: 21300000, guid: b4960a4a306f6473cb2fc05e47e76198, type: 3}
+  conveyorBelt: {fileID: 0}
 --- !u!61 &899916279069564412
 BoxCollider2D:
   m_ObjectHideFlags: 0

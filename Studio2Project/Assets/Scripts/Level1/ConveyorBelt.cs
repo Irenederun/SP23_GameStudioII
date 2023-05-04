@@ -26,6 +26,10 @@ public class ConveyorBelt : MonoBehaviour
     public GameObject awayMouse;
     public static bool noSewingLines;
 
+    private GameObject audioHolder;
+    public AudioSource conveyorBelt;
+    
+
     void Start()
     {
         objectPos = gameObject.transform.position;
@@ -34,6 +38,10 @@ public class ConveyorBelt : MonoBehaviour
         mouseRenderer.sprite = mouseSprites[GameManager.instance.NumberCount];
 
         noSewingLines = false;
+
+        audioHolder = GameObject.FindWithTag("audio");
+        conveyorBelt = audioHolder.GetComponent<AudioSource>();
+        conveyorBelt.Play(0);
     }
     
     void Update()
@@ -93,7 +101,11 @@ public class ConveyorBelt : MonoBehaviour
         {
             Debug.Log("Destroyed In!");
             GameManager.buttonPressable = true;
-            Destroy(this.gameObject);
+            if (conveyorBelt.isPlaying)
+            {
+                conveyorBelt.Stop();
+            }
+            Destroy(gameObject);
         }
     }
 
