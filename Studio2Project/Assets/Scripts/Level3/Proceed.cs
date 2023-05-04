@@ -75,7 +75,7 @@ public class Proceed : MonoBehaviour
         {
             newBoardPos = newBoardObj.transform.position;
             
-            if (newBoardPos.y > 0.81f)
+            if (newBoardPos.y > 0.47f)
             {
                 newBoardPos.y -= 2f * Time.deltaTime; 
                 newBoardObj.transform.position = newBoardPos;
@@ -117,7 +117,7 @@ public class Proceed : MonoBehaviour
 
     public void NewBoard()
     {
-        newBoardObj = Instantiate(newBoard, new Vector3(0.05f, 9.5f, 1.73f), Quaternion.identity);
+        newBoardObj = Instantiate(newBoard, new Vector3(0.05f, 9.16f, 1.73f), Quaternion.identity);
     }
 
     private void LoadScene()
