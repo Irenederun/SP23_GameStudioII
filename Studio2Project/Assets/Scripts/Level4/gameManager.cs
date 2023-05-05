@@ -7,7 +7,7 @@ public class gameManager : MonoBehaviour
     public GameObject hintObject;
     public GameObject objectC;
 
-    private GameObject objectA;
+    public GameObject objectA;
     
     public GameObject fadeOut;
     public GameObject fadeIn;
@@ -16,9 +16,6 @@ public class gameManager : MonoBehaviour
 
     void Start()
     {
-        // 找到场景中名为 "ObjectA" 的物体
-        objectA = GameObject.Find("Coin");
-        
         fadeInObj = Instantiate(fadeIn);
         Invoke("DestroyFadeIn", 2f);
     }
