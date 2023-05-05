@@ -1,10 +1,3 @@
-
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Fungus;
-using MoonSharp.Interpreter;
-using TreeEditor;
 using UnityEngine;
 using Collision2D = UnityEngine.Collision2D;
 

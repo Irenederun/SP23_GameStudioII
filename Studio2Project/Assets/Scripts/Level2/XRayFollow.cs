@@ -1,12 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Newtonsoft.Json.Serialization;
-using Unity.VisualScripting;
-using UnityEditorInternal;
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
-
 public class XRayFollow : MonoBehaviour
 {
     private Vector2 objectPos;
@@ -97,7 +89,7 @@ public class XRayFollow : MonoBehaviour
             }
         }
 
-        if (tapTime * Time.deltaTime >= 9f && RatOnBeltRight.arrived)
+        if (tapTime * Time.deltaTime >= 5f && RatOnBeltRight.arrived)
         {
             XRay.SetActive(true);
             xRayActive = true;

@@ -1,9 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Fungus.EditorUtils;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class TransitionGameManager : MonoBehaviour
 {
