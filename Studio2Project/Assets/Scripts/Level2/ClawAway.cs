@@ -38,6 +38,11 @@ public class ClawAway : MonoBehaviour
             transform.position = clawPos;
         }
 
+        if (transform.position.y < 0.15f)
+        {
+            transform.position = clawPosInitial;   
+        }
+
         if (DestroyOnOut.clawReturn)
         {
             RatOnBeltRight.clawCollided = false;
@@ -57,20 +62,12 @@ public class ClawAway : MonoBehaviour
         }
     }
 
-    // private void clawReturn()
-    // {
-    //     clawPos.y += speed * Time.deltaTime;
-    //     transform.position = clawPos;
-    //     anim.SetBool("catchMouse", false);
-    // }
-
     public void RatDead()
     {
         Debug.Log("NOW");
         if (collidedRat != null)
         {
             collidedRat.GetComponent<RatOnBeltRight>().clawAwayMouse();
-            //anim.SetBool("catchMouse", false);
             goUp = true;
         }
     }
