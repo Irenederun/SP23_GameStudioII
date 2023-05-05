@@ -32,7 +32,7 @@ public class gameManager : MonoBehaviour
         {
             Debug.Log("find!");
             // 激活提示动画和物体C
-            hintObject.SetActive(true);
+            //hintObject.SetActive(true);
             objectC.SetActive(true);
 
             // 销毁 GameManager 组件

@@ -8,6 +8,7 @@ public class KnobRotate : MonoBehaviour
     private Vector3 dragStartPos;
     private float startAngle;
     public AudioSource sound;
+    public GameObject fadeout;
 
     private void Update()
     {
@@ -22,8 +23,14 @@ public class KnobRotate : MonoBehaviour
             {
                 sound.Play(0);   
                 StartCoroutine(MoveCamera());
+                Invoke("fadeOut", 5f);
             }
         }
+    }
+
+    private void fadeOut()
+    {
+        Instantiate(fadeout);
     }
 
     private IEnumerator MoveCamera()

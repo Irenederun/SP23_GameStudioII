@@ -434,7 +434,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b496ff5b5a72490f808e8424186f586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeOut: {fileID: 2679210994125348877, guid: 49f52d9a1bb83eb43b7dff972908a37b, type: 3}
 --- !u!50 &375312932
 Rigidbody2D:
   serializedVersion: 4
@@ -803,6 +802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 105955884}
+  fadeout: {fileID: 2679210994125348877, guid: 49f52d9a1bb83eb43b7dff972908a37b, type: 3}
 --- !u!1 &1344573527
 GameObject:
   m_ObjectHideFlags: 0

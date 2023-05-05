@@ -11,7 +11,7 @@ public class FollowMouse : MonoBehaviour
     private Vector3 mousePos;
     private bool meetSlot;
     //public static bool isFinished;
-    public GameObject fadeOut;
+    //public GameObject fadeOut;
 
     void Update()
     {
@@ -36,13 +36,8 @@ public class FollowMouse : MonoBehaviour
                     //Cursor.visible = true;
                     // play an audio here;
                     
-                    Invoke("FadeOut", 6f);
+                    //Invoke("FadeOut", 6f);
                 }
             }
-    }
-
-    void FadeOut()
-    {
-        Instantiate(fadeOut);
     }
 }
