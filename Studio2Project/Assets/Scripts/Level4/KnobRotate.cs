@@ -21,10 +21,15 @@ public class KnobRotate : MonoBehaviour
             if (angle >= 180f)
             {
                 sound.Play(0);   
-                StartCoroutine(MoveCamera());
-                Invoke("fadeOut", 5f);
+                Invoke("MoveCam", 1.5f);
+                Invoke("fadeOut", 7f);
             }
         }
+    }
+
+    void MoveCam()
+    {
+        StartCoroutine(MoveCamera());
     }
 
     private void fadeOut()
