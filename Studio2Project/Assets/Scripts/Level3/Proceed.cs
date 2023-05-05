@@ -54,11 +54,11 @@ public class Proceed : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
         }
         if (Input.GetKey(KeyCode.R))
         {
-            SceneManager.LoadScene(5);
+            SceneManager.LoadScene(6);
         }
 
         if (ClicktoRotate.clothIsInPosition && ClicktoRotateMouse.mouseIsInPosition &&
@@ -130,7 +130,7 @@ public class Proceed : MonoBehaviour
 
     private void LoadScene()
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(6);
     }
 
     public void InstantiateNewObjs()

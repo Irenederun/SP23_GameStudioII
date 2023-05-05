@@ -597,7 +597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfb8710ec5530c447805ce72ed781d86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelChanger: 1
+  levelChanger: 7
   mouse: {fileID: 546064321276545734, guid: cd456098ba72a354abcf7e4fa7f85977, type: 3}
   fadeIn: {fileID: 9110912350968716683, guid: e4749cdfea2a5d9458f03db8eee3bf89, type: 3}
   fadeOut: {fileID: 2679210994125348877, guid: 49f52d9a1bb83eb43b7dff972908a37b, type: 3}

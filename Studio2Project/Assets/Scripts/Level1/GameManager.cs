@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
         
         if (Input.GetKey(KeyCode.R))
@@ -134,7 +134,7 @@ public class GameManager : MonoBehaviour
 
     private void LoadScene()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
 
 }

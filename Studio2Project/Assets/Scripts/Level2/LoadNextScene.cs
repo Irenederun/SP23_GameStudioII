@@ -29,7 +29,7 @@ public class LoadNextScene : MonoBehaviour
         Debug.Log("Number of mouse " + mouseNumber);
         if (Input.GetKey(KeyCode.Space))
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
         
         if (Input.GetKey(KeyCode.R))
@@ -47,6 +47,6 @@ public class LoadNextScene : MonoBehaviour
 
     private void LoadScene()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(5);
     }
 }

@@ -62,16 +62,16 @@ public class WASD : MonoBehaviour
 
     private void LoadScene1()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     private void LoadScene2()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
     
     private void LoadScene3()
     {
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene(7);
     }
 }

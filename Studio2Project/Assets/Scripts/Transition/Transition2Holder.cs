@@ -5,7 +5,7 @@ using UnityEngine;
 public class Transition2Holder : MonoBehaviour
 {
     public static Transition2Holder instance;
-    public int levelChanger = 1;
+    public int levelChanger = 2;
     public GameObject mouse;
     public GameObject fadeIn;
     public GameObject fadeOut;

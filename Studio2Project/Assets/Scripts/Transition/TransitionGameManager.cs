@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class TransitionGameManager : MonoBehaviour
 {
     public static TransitionGameManager instance;
-    public int levelChanger = 0;
+    public int levelChanger = 1;
     public GameObject mouse;
     public GameObject fadeIn;
     public GameObject fadeOut;
