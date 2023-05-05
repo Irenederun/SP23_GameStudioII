@@ -8,21 +8,23 @@ public class KnobRotate : MonoBehaviour
     private float startAngle;
     public AudioSource sound;
     public GameObject fadeout;
+    private bool operationDone = false;
 
     private void Update()
     {
-        if (isDragging)
+        if (isDragging && !operationDone)
         {
             Vector3 mousePos = Input.mousePosition;
             Vector3 objectPos = Camera.main.WorldToScreenPoint(transform.position);
             mousePos -= objectPos;
             float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg - startAngle;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-            if (angle >= 180f)
+            if (angle >= 225f)
             {
                 sound.Play(0);   
                 Invoke("MoveCam", 1.5f);
                 Invoke("fadeOut", 7f);
+                operationDone = true;
             }
         }
     }
