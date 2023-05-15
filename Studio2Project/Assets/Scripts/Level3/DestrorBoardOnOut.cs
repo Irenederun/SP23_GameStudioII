@@ -10,5 +10,6 @@ public class DestrorBoardOnOut : MonoBehaviour
         ClicktoRotate.clothIsInPosition = false;
         ClicktoRotateMouse.mouseIsInPosition = false;
         ClickToRotateIpad.ipadIsInPosition = false;
+        Cursor.visible = true;
     }
 }

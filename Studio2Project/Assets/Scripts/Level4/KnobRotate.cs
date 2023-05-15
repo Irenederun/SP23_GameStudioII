@@ -1,4 +1,5 @@
 using System.Collections;
+using Fungus;
 using UnityEngine;
 
 public class KnobRotate : MonoBehaviour
@@ -9,23 +10,30 @@ public class KnobRotate : MonoBehaviour
     public AudioSource sound;
     public GameObject fadeout;
     private bool operationDone = false;
+    private float dragCount = 0;
 
     private void Update()
     {
         if (isDragging && !operationDone)
         {
-            Vector3 mousePos = Input.mousePosition;
-            Vector3 objectPos = Camera.main.WorldToScreenPoint(transform.position);
-            mousePos -= objectPos;
-            float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg - startAngle;
-            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-            if (angle >= 225f)
+            if (dragCount > 50)
             {
                 sound.Play(0);   
                 Invoke("MoveCam", 1.5f);
                 Invoke("fadeOut", 7f);
                 operationDone = true;
+                return;
             }
+            
+            Vector3 mousePos = Input.mousePosition;
+            Vector3 objectPos = Camera.main.WorldToScreenPoint(transform.position);
+            mousePos -= objectPos;
+            float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg - startAngle;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+            dragCount++;
+            
+            //if (angle >= 225f)
         }
     }
 

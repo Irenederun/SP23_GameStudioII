@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class FollowMouse : MonoBehaviour
@@ -7,6 +8,14 @@ public class FollowMouse : MonoBehaviour
     private bool meetSlot;
     //public static bool isFinished;
     //public GameObject fadeOut;
+    public List<Sprite> sprites;
+    private SpriteRenderer sp;
+
+    private void Start()
+    {
+        sp = GetComponent<SpriteRenderer>();
+        sp.sprite = sprites[0];
+    }
 
     void Update()
     {
@@ -26,11 +35,16 @@ public class FollowMouse : MonoBehaviour
                 Debug.Log("collided with slot");
                 if (Input.GetMouseButton(0))
                 {
+                    gameManager.instance.ChangeCursor();
+                    sp.sprite = sprites[1];
+                    Destroy(GetComponent<CircleCollider2D>());
+                    Destroy(GetComponent<Rigidbody2D>());
+                    
                     // Destroy the coin game object
-                    Destroy(gameObject);
+                    //Destroy(gameObject);
                     //Cursor.visible = true;
                     // play an audio here;
-                    
+
                     //Invoke("FadeOut", 6f);
                 }
             }

@@ -396,7 +396,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: dbaa3b55f7ba74125bc7b1a4a32cd859, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0f639ff7d2224e04c879c4dca1db5a44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -434,6 +434,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b496ff5b5a72490f808e8424186f586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 0f639ff7d2224e04c879c4dca1db5a44, type: 3}
+  - {fileID: 21300000, guid: dbaa3b55f7ba74125bc7b1a4a32cd859, type: 3}
 --- !u!50 &375312932
 Rigidbody2D:
   serializedVersion: 4
@@ -852,6 +855,7 @@ MonoBehaviour:
   objectA: {fileID: 375312926}
   fadeOut: {fileID: 2679210994125348877, guid: 49f52d9a1bb83eb43b7dff972908a37b, type: 3}
   fadeIn: {fileID: 9110912350968716683, guid: e4749cdfea2a5d9458f03db8eee3bf89, type: 3}
+  ObjADestroyed: 0
 --- !u!1 &1369922149
 GameObject:
   m_ObjectHideFlags: 0

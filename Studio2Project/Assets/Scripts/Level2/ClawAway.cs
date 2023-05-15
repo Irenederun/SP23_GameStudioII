@@ -45,6 +45,13 @@ public class ClawAway : MonoBehaviour
 
         if (DestroyOnOut.clawReturn)
         {
+            if (clawPos.y < clawPosInitial.y - 1f)
+            {
+                transform.position = clawPosInitial;
+                DestroyOnOut.clawReturn = false;
+                return;
+            }
+            
             RatOnBeltRight.clawCollided = false;
             goUp = false;
             anim.SetBool("catchMouse", false);
@@ -52,12 +59,6 @@ public class ClawAway : MonoBehaviour
             {
                 clawPos.y -= 2f * speed * Time.deltaTime;
                 transform.position = clawPos;
-            }
-            
-            if (clawPos.y < clawPosInitial.y)
-            {
-                transform.position = clawPosInitial;
-                DestroyOnOut.clawReturn = false;
             }
         }
     }

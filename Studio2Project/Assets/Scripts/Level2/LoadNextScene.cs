@@ -44,6 +44,7 @@ public class LoadNextScene : MonoBehaviour
 
     private void LoadScene()
     {
+        Cursor.visible = true;
         SceneManager.LoadScene(5);
     }
 }

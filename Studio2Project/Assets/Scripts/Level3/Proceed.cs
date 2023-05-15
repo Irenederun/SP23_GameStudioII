@@ -35,6 +35,7 @@ public class Proceed : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = true;
         setNumber = 0;
         goDown = false;
         buttonImage = finishButton.image;
