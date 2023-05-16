@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class gameManager : MonoBehaviour
 {
@@ -33,7 +34,15 @@ public class gameManager : MonoBehaviour
     
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            Cursor.visible = true;
+            SceneManager.LoadScene(0);
+            return;
+        }
+        
         Cursor.visible = false;
+
     }
 
     public void ChangeCursor()

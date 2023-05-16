@@ -31,6 +31,8 @@ public class Proceed : MonoBehaviour
     public GameObject rightPlate;
     
     public AudioSource conveyorBelt;
+    public Sprite enableSP;
+    private Sprite disabledSP;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +41,7 @@ public class Proceed : MonoBehaviour
         setNumber = 0;
         goDown = false;
         buttonImage = finishButton.image;
+        disabledSP = buttonImage.sprite;
         fadeInObj = Instantiate(fadeIn);
         Invoke("DestroyFadeIn", 2f);
     }
@@ -63,13 +66,15 @@ public class Proceed : MonoBehaviour
         if (ClicktoRotate.clothIsInPosition && ClicktoRotateMouse.mouseIsInPosition &&
             ClickToRotateIpad.ipadIsInPosition)
         {
-            buttonImage.color = Color.green;
+            //buttonImage.color = Color.green;
+            buttonImage.sprite = enableSP;
             finishButton.enabled = true;
         }
         else
         {
             finishButton.enabled = false;
-            buttonImage.color = Color.white;
+            //buttonImage.color = Color.white;
+            buttonImage.sprite = disabledSP;
         }
 
         if (newBoardObj != null)

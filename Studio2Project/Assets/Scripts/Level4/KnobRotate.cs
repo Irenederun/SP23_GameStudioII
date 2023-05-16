@@ -16,13 +16,13 @@ public class KnobRotate : MonoBehaviour
     {
         if (isDragging && !operationDone)
         {
-            if (dragCount > 50)
+            if (dragCount * Time.deltaTime > 1.2f)
             {
                 sound.Play(0);   
                 Invoke("MoveCam", 1.5f);
                 Invoke("fadeOut", 7f);
                 operationDone = true;
-                return;
+                //return;
             }
             
             Vector3 mousePos = Input.mousePosition;
