@@ -21,4 +21,9 @@ public class CreditButton : MonoBehaviour
     {
         SceneManager.LoadScene(8);
     }
+
+    public void REturn()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
